@@ -8,7 +8,7 @@ To provide an understanding of how to create and run the code of drawing turtle_
 - IDE Application such as Vs Code, PyCharm, Sublime…
 
 ## Instruction
-**Step One **
+**Step One**
 - Open IDE
 - Create package python script 
 - Include this script into the file
@@ -45,19 +45,19 @@ To provide an understanding of how to create and run the code of drawing turtle_
   
 - Save the file in specific directory
 
-** Step Two **
+**Step Two**
 - Initialize source
 - Run command in terminal
 
       source /opt/ros/noetic/setup.bash
       roscore
   
-** Step Three **
+**Step Three**
 Open another terminal and run
 
     rosrun turtlesim turtlesim_node
 
-** Step Four **
+**Step Four**
 - Open another terminal
 - locate the spcific directory
 
