@@ -1,0 +1,21 @@
+[rosmaster.main][INFO] 2024-03-01 10:30:21,892: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2024-03-01 10:30:21,892: Starting ROS Master Node
+[xmlrpc][INFO] 2024-03-01 10:30:21,893: XML-RPC server binding to 0.0.0.0:11311
+[xmlrpc][INFO] 2024-03-01 10:30:21,893: Started XML-RPC server [http://TheanVIn:11311/]
+[rosmaster.master][INFO] 2024-03-01 10:30:21,893: Master initialized: port[11311], uri[http://TheanVIn:11311/]
+[xmlrpc][INFO] 2024-03-01 10:30:21,894: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2024-03-01 10:30:21,945: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2024-03-01 10:30:21,946: +PARAM [/roslaunch/uris/host_theanvin__36047] by /roslaunch
+[rosmaster.master][INFO] 2024-03-01 10:30:21,965: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2024-03-01 10:30:21,965: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2024-03-01 10:30:21,976: +SERVICE [/rosout/get_loggers] /rosout http://TheanVIn:35711/
+[rosmaster.master][INFO] 2024-03-01 10:30:21,976: +SERVICE [/rosout/set_logger_level] /rosout http://TheanVIn:35711/
+[rosmaster.master][INFO] 2024-03-01 10:30:21,977: +PUB [/rosout_agg] /rosout http://TheanVIn:35711/
+[rosmaster.master][INFO] 2024-03-01 10:30:21,978: +SUB [/rosout] /rosout http://TheanVIn:35711/
+[rosmaster.master][INFO] 2024-03-01 10:30:23,480: -PUB [/rosout_agg] /rosout http://TheanVIn:35711/
+[rosmaster.master][INFO] 2024-03-01 10:30:23,481: -SUB [/rosout] /rosout http://TheanVIn:35711/
+[rosmaster.master][INFO] 2024-03-01 10:30:23,481: -SERVICE [/rosout/get_loggers] /rosout rosrpc://TheanVIn:58991
+[rosmaster.master][INFO] 2024-03-01 10:30:23,482: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://TheanVIn:58991
+[rosmaster.main][INFO] 2024-03-01 10:30:23,524: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2024-03-01 10:30:23,525: stopping master...
+[rospy.core][INFO] 2024-03-01 10:30:23,525: signal_shutdown [atexit]

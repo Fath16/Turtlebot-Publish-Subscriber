@@ -1,0 +1,586 @@
+[rosmaster.main][INFO] 2024-03-06 10:08:14,253: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2024-03-06 10:08:14,253: Starting ROS Master Node
+[xmlrpc][INFO] 2024-03-06 10:08:14,254: XML-RPC server binding to 127.0.0.1:11311
+[xmlrpc][INFO] 2024-03-06 10:08:14,254: Started XML-RPC server [http://localhost:11311/]
+[xmlrpc][INFO] 2024-03-06 10:08:14,254: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2024-03-06 10:08:14,254: Master initialized: port[11311], uri[http://localhost:11311/]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,299: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,301: +PARAM [/roslaunch/uris/host_localhost__32929] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,322: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/use_sim_time] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/gazebo/enable_ros_network] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/pointcloud_to_laserscan/target_frame] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/pointcloud_to_laserscan/transform_tolerance] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/pointcloud_to_laserscan/min_height] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,323: +PARAM [/pointcloud_to_laserscan/max_height] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/angle_min] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/angle_max] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/angle_increment] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/scan_time] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/range_min] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/range_max] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/use_inf] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/inf_epsilon] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,324: +PARAM [/pointcloud_to_laserscan/concurrency_level] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/robot_description] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_joint_publisher/type] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_joint_publisher/publish_rate] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/type] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/left_wheel] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/right_wheel] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/publish_rate] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/pose_covariance_diagonal] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/twist_covariance_diagonal] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/cmd_vel_timeout] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/smb_velocity_controller/velocity_rolling_window_size] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/p] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/p] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/p] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/p] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/base_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/enable_odom_tf] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/estimate_velocity_from_position] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/wheel_separation_multiplier] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/wheel_radius_multiplier] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/linear/x/has_velocity_limits] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/linear/x/max_velocity] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,325: +PARAM [/gazebo_ros_control/linear/x/has_acceleration_limits] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/gazebo_ros_control/linear/x/max_acceleration] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/gazebo_ros_control/angular/z/has_velocity_limits] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/gazebo_ros_control/angular/z/max_velocity] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/gazebo_ros_control/angular/z/has_acceleration_limits] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/gazebo_ros_control/angular/z/max_acceleration] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/smb_robot_state_publisher/publish_frequency] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/smb_robot_state_publisher/use_tf_static] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/twist_mux/topics] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/twist_mux/locks] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/odom_frame] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/base_link_frame] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/world_frame] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/two_d_mode] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/frequency] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/odom0] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/odom0_config] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/odom0_differential] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/odom0_queue_size] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/imu0] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/imu0_config] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/imu0_differential] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/imu0_queue_size] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,326: +PARAM [/ekf_localization/imu0_remove_gravitational_acceleration] by /roslaunch
+[rosmaster.master][INFO] 2024-03-06 10:08:14,328: +SERVICE [/rosout/get_loggers] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,328: +SERVICE [/rosout/set_logger_level] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,329: +SUB [/clock] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,330: +PUB [/rosout_agg] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,331: +SUB [/rosout] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,373: +PUB [/rosout] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,374: +SERVICE [/twist_mux/get_loggers] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,374: +PUB [/rosout] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,374: +SERVICE [/twist_mux/set_logger_level] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,374: +SERVICE [/smb_robot_state_publisher/get_loggers] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,375: +SERVICE [/smb_robot_state_publisher/set_logger_level] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,376: +SUB [/clock] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,377: +CACHEDPARAM [/twist_mux/topics] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:14,377: +SUB [/clock] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,378: +CACHEDPARAM [/rosout_disable_topics_generation] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:14,379: +CACHEDPARAM [/rosout_disable_topics_generation] by /smb_robot_state_publisher
+[rosmaster.master][INFO] 2024-03-06 10:08:14,380: +SUB [/joy_teleop/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,380: +PUB [/tf] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,381: +PUB [/tf_static] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,381: +SUB [/twist_marker_server/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,383: +SUB [/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,384: +CACHEDPARAM [/twist_mux/locks] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:14,384: +PUB [/rosout] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,384: +SUB [/joint_states] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,384: +SERVICE [/ekf_localization/get_loggers] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,385: +SERVICE [/ekf_localization/set_logger_level] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,385: +SUB [/e_stop] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,386: +PUB [/smb_velocity_controller/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,386: +PUB [/diagnostics] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,387: +SUB [/clock] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,387: +CACHEDPARAM [/twist_mux/diagnostic_period] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:14,387: +PUB [/diagnostics] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,388: +CACHEDPARAM [/ekf_localization/diagnostic_period] by /ekf_localization
+[rosmaster.master][INFO] 2024-03-06 10:08:14,389: +SUB [/tf] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,390: +SUB [/tf_static] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,391: +PUB [/tf] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,398: +SUB [/set_pose] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,398: +SERVICE [/set_pose] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,399: +SERVICE [/ekf_localization/enable] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,399: +SERVICE [/ekf_localization/toggle] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,405: +SUB [/imu/data] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,406: +PUB [/odometry/filtered] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,454: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,454: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:37211/', 'http://localhost:36561/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,456: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,457: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:37211/', 'http://localhost:36561/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,457: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,457: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,457: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,458: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,620: +PUB [/rosout] /base_controller_spawner http://localhost:39145/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,621: +SUB [/clock] /base_controller_spawner http://localhost:39145/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,622: +SERVICE [/base_controller_spawner/get_loggers] /base_controller_spawner http://localhost:39145/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,623: +SERVICE [/base_controller_spawner/set_logger_level] /base_controller_spawner http://localhost:39145/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,623: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:14,640: +PUB [/rosout] /spawn_urdf http://localhost:32941/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,642: +SUB [/clock] /spawn_urdf http://localhost:32941/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,642: +SERVICE [/spawn_urdf/get_loggers] /spawn_urdf http://localhost:32941/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,643: +SERVICE [/spawn_urdf/set_logger_level] /spawn_urdf http://localhost:32941/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,643: +CACHEDPARAM [/rosout_disable_topics_generation] by /spawn_urdf
+[rosmaster.master][INFO] 2024-03-06 10:08:14,646: +CACHEDPARAM [/rosout_disable_topics_generation] by /spawn_urdf
+[rosmaster.master][INFO] 2024-03-06 10:08:14,654: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,655: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,655: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:32941/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,655: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:32941/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,693: +PUB [/rosout] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,694: +SERVICE [/gazebo/get_loggers] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,694: +SERVICE [/gazebo/set_logger_level] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,695: +SUB [/clock] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,696: +CACHEDPARAM [/rosout_disable_topics_generation] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,741: +PUB [/rosout] /gazebo_gui http://localhost:46003/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,742: +SERVICE [/gazebo_gui/get_loggers] /gazebo_gui http://localhost:46003/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,742: +SERVICE [/gazebo_gui/set_logger_level] /gazebo_gui http://localhost:46003/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,744: +SUB [/clock] /gazebo_gui http://localhost:46003/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,745: +CACHEDPARAM [/rosout_disable_topics_generation] by /gazebo_gui
+[rosmaster.master][INFO] 2024-03-06 10:08:14,755: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:32941/', 'http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,757: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:32941/', 'http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,757: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:32941/', 'http://localhost:42415/', 'http://localhost:46003/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,757: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:32941/', 'http://localhost:42415/', 'http://localhost:46003/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,859: +CACHEDPARAM [/rosout/omit_topics] by /rosout
+[rosmaster.master][INFO] 2024-03-06 10:08:14,945: +PUB [/clock] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,945: +SERVICE [/gazebo/spawn_sdf_model] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,945: +SERVICE [/gazebo/spawn_urdf_model] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,946: +SERVICE [/gazebo/delete_model] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,946: +SERVICE [/gazebo/delete_light] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,946: +SERVICE [/gazebo/get_model_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,947: +SERVICE [/gazebo/get_model_state] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,947: +SERVICE [/gazebo/get_world_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,947: +SERVICE [/gazebo/get_joint_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,947: +SERVICE [/gazebo/get_link_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,948: +SERVICE [/gazebo/get_link_state] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,948: +SERVICE [/gazebo/get_light_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,949: +SERVICE [/gazebo/set_light_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,949: +CACHEDPARAM [/rosout_disable_topics_generation] by /spawn_urdf
+[rosmaster.master][INFO] 2024-03-06 10:08:14,949: +SERVICE [/gazebo/get_physics_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,949: +PUB [/gazebo/link_states] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,950: +PUB [/gazebo/model_states] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,950: +PUB [/gazebo/performance_metrics] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,951: +SERVICE [/gazebo/set_link_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,951: +SERVICE [/gazebo/set_physics_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,951: +SERVICE [/gazebo/set_model_state] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,951: +SERVICE [/gazebo/set_model_configuration] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,952: +SERVICE [/gazebo/set_joint_properties] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,952: +SERVICE [/gazebo/set_link_state] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,953: +SUB [/gazebo/set_link_state] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,954: +SUB [/gazebo/set_model_state] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,955: +SERVICE [/gazebo/pause_physics] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,955: +SERVICE [/gazebo/unpause_physics] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,955: +SERVICE [/gazebo/apply_body_wrench] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,955: +SERVICE [/gazebo/apply_joint_effort] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,955: +SERVICE [/gazebo/clear_joint_forces] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,956: +SERVICE [/gazebo/clear_body_wrenches] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,956: +SERVICE [/gazebo/reset_simulation] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,956: +SERVICE [/gazebo/reset_world] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,957: publisherUpdate[/clock] -> http://localhost:38097/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,957: publisherUpdate[/clock] -> http://localhost:32997/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,958: publisherUpdate[/clock] -> http://localhost:38097/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,958: publisherUpdate[/clock] -> http://localhost:37211/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,958: publisherUpdate[/clock] -> http://localhost:36561/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,959: publisherUpdate[/clock] -> http://localhost:37211/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,959: publisherUpdate[/clock] -> http://localhost:32997/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,959: publisherUpdate[/clock] -> http://localhost:39145/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,960: publisherUpdate[/clock] -> http://localhost:32941/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,960: publisherUpdate[/clock] -> http://localhost:36561/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,960: publisherUpdate[/clock] -> http://localhost:42415/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,961: publisherUpdate[/clock] -> http://localhost:32941/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,961: publisherUpdate[/clock] -> http://localhost:46003/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:14,961: publisherUpdate[/clock] -> http://localhost:42415/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,961: publisherUpdate[/clock] -> http://localhost:39145/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:14,964: +SERVICE [/gazebo/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,965: +PUB [/gazebo/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,965: +PUB [/gazebo/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:14,967: +PARAM [/gazebo/time_step] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,967: +PARAM [/gazebo/max_update_rate] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,967: +PARAM [/gazebo/gravity_x] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,968: +PARAM [/gazebo/gravity_y] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,968: +PARAM [/gazebo/gravity_z] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,968: +PARAM [/gazebo/auto_disable_bodies] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,968: +PARAM [/gazebo/sor_pgs_precon_iters] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,968: +PARAM [/gazebo/sor_pgs_iters] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,969: +PARAM [/gazebo/sor_pgs_w] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,969: +PARAM [/gazebo/sor_pgs_rms_error_tol] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,969: +PARAM [/gazebo/cfm] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,970: +PARAM [/gazebo/erp] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,970: +PARAM [/gazebo/contact_surface_layer] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,970: +PARAM [/gazebo/contact_max_correcting_vel] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:14,970: +PARAM [/gazebo/max_contacts] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:15,009: publisherUpdate[/clock] -> http://localhost:46003/ ['http://localhost:42415/']: sec=0.05, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:16,427: +CACHEDPARAM [/rosout_disable_topics_generation] by /spawn_urdf
+[rosmaster.master][INFO] 2024-03-06 10:08:16,427: +PARAM [/gazebo/time_step] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,428: +PARAM [/gazebo/max_update_rate] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,428: +PARAM [/gazebo/gravity_x] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,428: +PARAM [/gazebo/gravity_y] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,428: -SUB [/clock] /spawn_urdf http://localhost:32941/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,428: -PUB [/rosout] /spawn_urdf http://localhost:32941/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,429: -SERVICE [/spawn_urdf/get_loggers] /spawn_urdf rosrpc://localhost:35931
+[rosmaster.master][INFO] 2024-03-06 10:08:16,429: +PARAM [/gazebo/gravity_z] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,429: -SERVICE [/spawn_urdf/set_logger_level] /spawn_urdf rosrpc://localhost:35931
+[rosmaster.master][INFO] 2024-03-06 10:08:16,429: +PARAM [/gazebo/auto_disable_bodies] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,429: +PARAM [/gazebo/sor_pgs_precon_iters] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,430: +PARAM [/gazebo/sor_pgs_iters] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,430: +PARAM [/gazebo/sor_pgs_w] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,430: +PARAM [/gazebo/sor_pgs_rms_error_tol] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,430: +PARAM [/gazebo/cfm] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,431: +PARAM [/gazebo/erp] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,431: +PARAM [/gazebo/contact_surface_layer] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,431: +PARAM [/gazebo/contact_max_correcting_vel] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,431: +PARAM [/gazebo/max_contacts] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,439: +PUB [/rslidar_points] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,463: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']
+[rosmaster.master][INFO] 2024-03-06 10:08:16,464: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:16,539: +PUB [/imu0] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,539: +PUB [/imu0/bias] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,539: +SERVICE [/imu/calibrate] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,540: +SERVICE [/imu0/set_accel_bias] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,540: +SERVICE [/imu0/set_rate_bias] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,541: +SERVICE [/imu0/accel/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,541: +PUB [/imu0/accel/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,541: +PUB [/imu0/accel/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,542: +PARAM [/imu0/accel/gaussian_noise] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,542: +PARAM [/imu0/accel/offset] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,543: +PARAM [/imu0/accel/drift] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,543: +PARAM [/imu0/accel/drift_frequency] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,543: +PARAM [/imu0/accel/scale_error] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,543: +SERVICE [/imu0/rate/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,544: +PUB [/imu0/rate/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,544: +PUB [/imu0/rate/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,545: +PARAM [/imu0/rate/gaussian_noise] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,545: +PARAM [/imu0/rate/offset] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,545: +PARAM [/imu0/rate/drift] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,545: +PARAM [/imu0/rate/drift_frequency] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,546: +PARAM [/imu0/rate/scale_error] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,546: +SERVICE [/imu0/yaw/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,546: +PUB [/imu0/yaw/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,546: +PUB [/imu0/yaw/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,547: +PARAM [/imu0/yaw/gaussian_noise] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,548: +PARAM [/imu0/yaw/offset] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,548: +PARAM [/imu0/yaw/drift] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,548: +PARAM [/imu0/yaw/drift_frequency] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,548: +PARAM [/imu0/yaw/scale_error] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,548: +PARAM [/imu0/accel/gaussian_noise] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,549: +PARAM [/imu0/accel/offset] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,549: +PARAM [/imu0/accel/drift] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,549: +PARAM [/imu0/accel/drift_frequency] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,549: +PARAM [/imu0/accel/scale_error] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,549: +PARAM [/imu0/rate/gaussian_noise] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,549: +PARAM [/imu0/rate/offset] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,550: +PARAM [/imu0/rate/drift] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,550: +PARAM [/imu0/rate/drift_frequency] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,550: +PARAM [/imu0/rate/scale_error] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,550: +PARAM [/imu0/yaw/gaussian_noise] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,550: +PARAM [/imu0/yaw/offset] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,551: +PARAM [/imu0/yaw/drift] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,551: +PARAM [/imu0/yaw/drift_frequency] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,551: +PARAM [/imu0/yaw/scale_error] by /gazebo
+[rosmaster.master][ERROR] 2024-03-06 10:08:16,560: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 177, in validated_f
+    code, msg, val = f(*newArgs, **kwds)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 435, in searchParam
+    search_key = self.param_server.search_param(caller_id, key)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/paramserver.py", line 116, in search_param
+    raise ValueError("namespace must be global")
+ValueError: namespace must be global
+
+[rosmaster.master][INFO] 2024-03-06 10:08:16,560: +PUB [/tf] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,562: +SUB [/cmd_vel] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,562: +PUB [/odom] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,563: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:16,564: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:37211/', 'http://localhost:36561/', 'http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:16,698: +SERVICE [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,699: +PUB [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,699: +PUB [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,700: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,701: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,701: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,701: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,701: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,701: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,702: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,702: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,702: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,702: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,703: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,703: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,703: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,704: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,704: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,704: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,704: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,705: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,705: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,705: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,705: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,705: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,706: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,706: +PARAM [/gazebo_ros_control/pid_gains/LF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,707: +SERVICE [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,708: +PUB [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,708: +PUB [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,709: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,709: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,709: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,710: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,710: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,710: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,710: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,710: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,710: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,711: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,711: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,711: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,711: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,711: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,712: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,712: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,712: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,712: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,712: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,713: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,713: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,713: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,713: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,713: +PARAM [/gazebo_ros_control/pid_gains/RF_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,715: +SERVICE [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,715: +PUB [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,715: +PUB [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,716: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,717: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,717: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,717: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,717: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,717: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,718: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,718: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,718: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,718: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,718: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,718: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,719: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,719: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,719: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,719: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,719: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,720: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,720: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,720: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,720: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,720: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,721: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,721: +PARAM [/gazebo_ros_control/pid_gains/LH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,722: +SERVICE [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,722: +PUB [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,723: +PUB [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,724: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,724: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,724: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,724: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,724: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,725: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,725: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,725: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,725: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,725: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,726: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,726: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,726: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,726: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,726: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,726: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,727: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,727: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,727: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/p] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,727: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,727: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/d] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,728: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_min] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,728: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/i_clamp_max] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,728: +PARAM [/gazebo_ros_control/pid_gains/RH_WHEEL_JOINT/antiwindup] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,729: +SERVICE [/controller_manager/list_controllers] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,730: +SERVICE [/controller_manager/list_controller_types] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,730: +SERVICE [/controller_manager/load_controller] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,731: +SERVICE [/controller_manager/unload_controller] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,731: +SERVICE [/controller_manager/switch_controller] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,731: +SERVICE [/controller_manager/reload_controller_libraries] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,731: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:16,733: +CACHEDPARAM [/rosout_disable_topics_generation] by /ekf_localization
+[rosmaster.master][INFO] 2024-03-06 10:08:16,733: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:16,735: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:16,740: +PUB [/joint_states] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,742: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:16,758: +PUB [/smb_velocity_controller/odom] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,759: +SUB [/smb_velocity_controller/cmd_vel] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,760: +SERVICE [/smb_velocity_controller/set_parameters] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,760: +PUB [/smb_velocity_controller/parameter_descriptions] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,760: +PUB [/smb_velocity_controller/parameter_updates] /gazebo http://localhost:42415/
+[rosmaster.master][INFO] 2024-03-06 10:08:16,762: +PARAM [/smb_velocity_controller/left_wheel_radius_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,762: +PARAM [/smb_velocity_controller/right_wheel_radius_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,762: +PARAM [/smb_velocity_controller/wheel_separation_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,762: +PARAM [/smb_velocity_controller/publish_rate] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,763: +PARAM [/smb_velocity_controller/enable_odom_tf] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,763: +PARAM [/smb_velocity_controller/left_wheel_radius_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,763: +PARAM [/smb_velocity_controller/right_wheel_radius_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,763: +PARAM [/smb_velocity_controller/wheel_separation_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,764: +PARAM [/smb_velocity_controller/publish_rate] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,764: +PARAM [/smb_velocity_controller/enable_odom_tf] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,764: publisherUpdate[/joint_states] -> http://localhost:37211/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:16,764: +PARAM [/smb_velocity_controller/left_wheel_radius_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,764: +PARAM [/smb_velocity_controller/right_wheel_radius_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,765: +PARAM [/smb_velocity_controller/wheel_separation_multiplier] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,765: publisherUpdate[/joint_states] -> http://localhost:37211/ ['http://localhost:42415/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:16,765: +PARAM [/smb_velocity_controller/publish_rate] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,765: +PARAM [/smb_velocity_controller/enable_odom_tf] by /gazebo
+[rosmaster.master][INFO] 2024-03-06 10:08:16,766: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:16,769: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:23,402: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:23,404: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:23,472: -PUB [/rosout] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,473: -PUB [/diagnostics] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,473: -PUB [/rosout] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,473: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']
+[rosmaster.master][INFO] 2024-03-06 10:08:23,474: -PUB [/tf] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,474: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:37211/', 'http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:23,474: -PUB [/smb_velocity_controller/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,475: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:32997/', 'http://localhost:37211/', 'http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:23,475: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:37211/', 'http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']
+[rosmaster.master][INFO] 2024-03-06 10:08:23,475: -PUB [/rosout] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,475: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:37211/', 'http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:23,476: publisherUpdate[/smb_velocity_controller/cmd_vel] -> http://localhost:42415/ []
+[rosmaster.master][INFO] 2024-03-06 10:08:23,476: -PUB [/odometry/filtered] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,476: -PUB [/diagnostics] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,476: publisherUpdate[/smb_velocity_controller/cmd_vel] -> http://localhost:42415/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:23,477: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']
+[rosmaster.master][INFO] 2024-03-06 10:08:23,477: -PUB [/tf] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,477: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:39145/', 'http://localhost:42415/', 'http://localhost:46003/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:23,477: -SUB [/clock] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,477: -SUB [/clock] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,478: -PUB [/tf_static] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,478: -SUB [/tf] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,478: -SUB [/joy_teleop/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,478: -SUB [/clock] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,478: -SUB [/tf_static] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,479: -SUB [/twist_marker_server/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,479: -SUB [/joint_states] /smb_robot_state_publisher http://localhost:37211/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,479: -SUB [/set_pose] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,479: -SUB [/cmd_vel] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,480: -SERVICE [/smb_robot_state_publisher/get_loggers] /smb_robot_state_publisher rosrpc://localhost:58401
+[rosmaster.master][INFO] 2024-03-06 10:08:23,480: -SUB [/imu/data] /ekf_localization http://localhost:36561/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,480: -SUB [/e_stop] /twist_mux http://localhost:32997/
+[rosmaster.master][INFO] 2024-03-06 10:08:23,480: -SERVICE [/smb_robot_state_publisher/set_logger_level] /smb_robot_state_publisher rosrpc://localhost:58401
+[rosmaster.master][INFO] 2024-03-06 10:08:23,481: -SERVICE [/ekf_localization/get_loggers] /ekf_localization rosrpc://localhost:37793
+[rosmaster.master][INFO] 2024-03-06 10:08:23,481: -SERVICE [/twist_mux/get_loggers] /twist_mux rosrpc://localhost:55445
+[rosmaster.master][INFO] 2024-03-06 10:08:23,481: -SERVICE [/ekf_localization/set_logger_level] /ekf_localization rosrpc://localhost:37793
+[rosmaster.master][INFO] 2024-03-06 10:08:23,481: -CACHEDPARAM [/rosout_disable_topics_generation] by /smb_robot_state_publisher
+[rosmaster.master][INFO] 2024-03-06 10:08:23,481: -SERVICE [/twist_mux/set_logger_level] /twist_mux rosrpc://localhost:55445
+[rosmaster.master][INFO] 2024-03-06 10:08:23,482: -SERVICE [/set_pose] /ekf_localization rosrpc://localhost:37793
+[rosmaster.master][INFO] 2024-03-06 10:08:23,482: -CACHEDPARAM [/rosout_disable_topics_generation] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:23,482: -SERVICE [/ekf_localization/enable] /ekf_localization rosrpc://localhost:37793
+[rosmaster.master][INFO] 2024-03-06 10:08:23,482: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:37211/', 'http://localhost:42415/']: sec=0.01, exception=<Fault -1: 'publisherUpdate: unknown method name'>
+[rosmaster.master][INFO] 2024-03-06 10:08:23,483: -CACHEDPARAM [/twist_mux/diagnostic_period] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:23,483: -SERVICE [/ekf_localization/toggle] /ekf_localization rosrpc://localhost:37793
+[rosmaster.master][INFO] 2024-03-06 10:08:23,483: -CACHEDPARAM [/twist_mux/locks] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:23,483: -CACHEDPARAM [/ekf_localization/diagnostic_period] by /ekf_localization
+[rosmaster.threadpool][ERROR] 2024-03-06 10:08:23,484: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1169, in single_request
+    return self.parse_response(resp)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1341, in parse_response
+    return u.close()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 655, in close
+    raise Fault(**self._stack[0])
+xmlrpc.client.Fault: <Fault -1: 'publisherUpdate: unknown method name'>
+
+[rosmaster.master][INFO] 2024-03-06 10:08:23,484: -CACHEDPARAM [/twist_mux/topics] by /twist_mux
+[rosmaster.master][INFO] 2024-03-06 10:08:23,484: -CACHEDPARAM [/rosout_disable_topics_generation] by /ekf_localization
+[rosmaster.master][INFO] 2024-03-06 10:08:23,484: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:42415/']
+[rosmaster.master][INFO] 2024-03-06 10:08:23,485: publisherUpdate[/tf] -> http://localhost:36561/ ['http://localhost:42415/']: sec=0.00, exception=<Fault -1: 'publisherUpdate: unknown method name'>
+[rosmaster.threadpool][ERROR] 2024-03-06 10:08:23,485: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1169, in single_request
+    return self.parse_response(resp)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1341, in parse_response
+    return u.close()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 655, in close
+    raise Fault(**self._stack[0])
+xmlrpc.client.Fault: <Fault -1: 'publisherUpdate: unknown method name'>
+
+[rosmaster.master][INFO] 2024-03-06 10:08:23,485: publisherUpdate[/tf_static] -> http://localhost:36561/ []
+[rosmaster.master][INFO] 2024-03-06 10:08:23,485: publisherUpdate[/tf_static] -> http://localhost:36561/ []: sec=0.00, exception=<Fault -1: 'publisherUpdate: unknown method name'>
+[rosmaster.threadpool][ERROR] 2024-03-06 10:08:23,485: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1169, in single_request
+    return self.parse_response(resp)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1341, in parse_response
+    return u.close()
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 655, in close
+    raise Fault(**self._stack[0])
+xmlrpc.client.Fault: <Fault -1: 'publisherUpdate: unknown method name'>
+
+[xmlrpc][ERROR] 2024-03-06 10:08:23,513: Traceback (most recent call last):
+  File "/usr/lib/python3.8/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.8/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.8/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3.8/http/server.py", line 429, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.8/http/server.py", line 395, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+[rosmaster.master][INFO] 2024-03-06 10:08:38,450: +CACHEDPARAM [/rosout_disable_topics_generation] by /base_controller_spawner
+[rosmaster.master][INFO] 2024-03-06 10:08:38,451: -SUB [/clock] /base_controller_spawner http://localhost:39145/
+[rosmaster.master][INFO] 2024-03-06 10:08:38,451: -PUB [/rosout] /base_controller_spawner http://localhost:39145/
+[rosmaster.master][INFO] 2024-03-06 10:08:38,451: -SERVICE [/base_controller_spawner/get_loggers] /base_controller_spawner rosrpc://localhost:41761
+[rosmaster.master][INFO] 2024-03-06 10:08:38,451: -SERVICE [/base_controller_spawner/set_logger_level] /base_controller_spawner rosrpc://localhost:41761
+[rosmaster.master][INFO] 2024-03-06 10:08:38,498: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:42415/', 'http://localhost:46003/']
+[rosmaster.master][INFO] 2024-03-06 10:08:38,498: publisherUpdate[/rosout] -> http://localhost:38097/ ['http://localhost:42415/', 'http://localhost:46003/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2024-03-06 10:08:39,400: -PUB [/rosout_agg] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:39,400: -SUB [/clock] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:39,400: -SUB [/rosout] /rosout http://localhost:38097/
+[rosmaster.master][INFO] 2024-03-06 10:08:39,401: -SERVICE [/rosout/get_loggers] /rosout rosrpc://localhost:50667
+[rosmaster.master][INFO] 2024-03-06 10:08:39,401: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://localhost:50667
+[rosmaster.master][INFO] 2024-03-06 10:08:39,401: -CACHEDPARAM [/rosout/omit_topics] by /rosout
+[rosmaster.main][INFO] 2024-03-06 10:08:39,427: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2024-03-06 10:08:39,427: stopping master...
+[rospy.core][INFO] 2024-03-06 10:08:39,427: signal_shutdown [atexit]

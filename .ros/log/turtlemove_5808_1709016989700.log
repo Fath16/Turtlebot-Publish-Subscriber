@@ -1,0 +1,19 @@
+[rospy.client][INFO] 2024-02-27 01:56:29,714: init_node, name[/turtlemove_5808_1709016989700], pid[5808]
+[xmlrpc][INFO] 2024-02-27 01:56:29,715: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2024-02-27 01:56:29,715: Started XML-RPC server [http://TheanVIn:33675/]
+[rospy.init][INFO] 2024-02-27 01:56:29,715: ROS Slave URI: [http://TheanVIn:33675/]
+[rospy.impl.masterslave][INFO] 2024-02-27 01:56:29,715: _ready: http://TheanVIn:33675/
+[rospy.registration][INFO] 2024-02-27 01:56:29,716: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-02-27 01:56:29,716: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-02-27 01:56:29,815: registered with master
+[rospy.rosout][INFO] 2024-02-27 01:56:29,815: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-02-27 01:56:29,818: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-02-27 01:56:29,819: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2024-02-27 01:56:30,100: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-02-27 01:56:54,032: topic[/turtle1/cmd_vel] adding connection to [/turtlesim], count 0
+[rospy.internal][INFO] 2024-02-27 02:00:07,621: topic[/turtle1/cmd_vel] removing connection to /turtlesim
+[rospy.internal][INFO] 2024-02-27 02:00:13,122: topic[/turtle1/cmd_vel] adding connection to [/turtlesim], count 0
+[rospy.internal][INFO] 2024-02-27 02:00:21,621: topic[/turtle1/cmd_vel] removing connection to /turtlesim
+[rospy.core][INFO] 2024-02-27 02:00:25,819: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2024-02-27 02:00:25,821: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2024-02-27 02:00:25,821: signal-2

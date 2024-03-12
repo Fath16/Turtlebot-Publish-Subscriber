@@ -1,0 +1,30 @@
+[rospy.client][INFO] 2024-03-12 13:04:08,879: init_node, name[/base_controller_spawner], pid[8352]
+[xmlrpc][INFO] 2024-03-12 13:04:08,880: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-12 13:04:08,880: Started XML-RPC server [http://localhost:43917/]
+[rospy.impl.masterslave][INFO] 2024-03-12 13:04:08,880: _ready: http://localhost:43917/
+[rospy.init][INFO] 2024-03-12 13:04:08,880: ROS Slave URI: [http://localhost:43917/]
+[rospy.registration][INFO] 2024-03-12 13:04:08,881: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-12 13:04:08,881: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-12 13:04:08,981: registered with master
+[rospy.rosout][INFO] 2024-03-12 13:04:08,981: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-12 13:04:08,985: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-12 13:04:08,985: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-12 13:04:08,987: connected to core topic /clock
+[rosout][INFO] 2024-03-12 13:04:08,989: Controller Spawner: Waiting for service controller_manager/load_controller
+[rospy.internal][INFO] 2024-03-12 13:04:09,236: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-12 13:04:09,646: topic[/clock] adding connection to [http://localhost:37739/], count 0
+[rosout][INFO] 2024-03-12 13:04:11,700: Controller Spawner: Waiting for service controller_manager/switch_controller
+[rosout][INFO] 2024-03-12 13:04:11,702: Controller Spawner: Waiting for service controller_manager/unload_controller
+[rosout][INFO] 2024-03-12 13:04:11,704: Loading controller: smb_joint_publisher
+[rosout][INFO] 2024-03-12 13:04:11,710: Loading controller: smb_velocity_controller
+[rosout][INFO] 2024-03-12 13:04:11,736: Controller Spawner: Loaded controllers: smb_joint_publisher, smb_velocity_controller
+[rosout][INFO] 2024-03-12 13:04:11,740: Started controllers: smb_joint_publisher, smb_velocity_controller
+[rospy.core][INFO] 2024-03-12 13:04:16,480: signal_shutdown [signal-2]
+[rosout][INFO] 2024-03-12 13:04:16,480: Shutting down spawner. Stopping and unloading controllers...
+[rosout][INFO] 2024-03-12 13:04:16,481: Stopping all controllers...
+[rospy.core][INFO] 2024-03-12 13:04:31,509: signal_shutdown [signal-15]
+[rospy.internal][INFO] 2024-03-12 13:04:31,534: topic[/clock] removing connection to http://localhost:37739/
+[rosout][WARNING] 2024-03-12 13:04:31,533: Controller Spawner error while taking down controllers: transport error completing service call: unable to receive data from sender, check sender's logs for details
+[rospy.internal][INFO] 2024-03-12 13:04:31,536: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2024-03-12 13:04:31,537: signal-2
+[rospy.core][INFO] 2024-03-12 13:04:32,135: signal_shutdown [atexit]

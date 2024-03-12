@@ -1,0 +1,322 @@
+[rospy.client][INFO] 2024-03-05 22:18:35,280: init_node, name[/teleop_twist_keyboard], pid[27439]
+[xmlrpc][INFO] 2024-03-05 22:18:35,280: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 22:18:35,281: Started XML-RPC server [http://localhost:43995/]
+[rospy.init][INFO] 2024-03-05 22:18:35,281: ROS Slave URI: [http://localhost:43995/]
+[rospy.impl.masterslave][INFO] 2024-03-05 22:18:35,281: _ready: http://localhost:43995/
+[rospy.registration][INFO] 2024-03-05 22:18:35,281: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 22:18:35,282: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 22:18:35,381: registered with master
+[rospy.rosout][INFO] 2024-03-05 22:18:35,381: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 22:18:35,385: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 22:18:35,385: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 22:18:35,387: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 22:18:35,671: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-05 22:18:35,672: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-05 22:18:35,681: topic[/clock] adding connection to [http://localhost:42937/], count 0
+[rospy.client][INFO] 2024-03-05 22:19:05,292: init_node, name[/teleop_twist_keyboard], pid[27797]
+[xmlrpc][INFO] 2024-03-05 22:19:05,292: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 22:19:05,292: Started XML-RPC server [http://localhost:35895/]
+[rospy.init][INFO] 2024-03-05 22:19:05,292: ROS Slave URI: [http://localhost:35895/]
+[rospy.impl.masterslave][INFO] 2024-03-05 22:19:05,292: _ready: http://localhost:35895/
+[rospy.registration][INFO] 2024-03-05 22:19:05,293: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 22:19:05,293: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 22:19:05,393: registered with master
+[rospy.rosout][INFO] 2024-03-05 22:19:05,393: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 22:19:05,396: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 22:19:05,397: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 22:19:05,398: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 22:19:05,657: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-05 22:19:05,658: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-05 22:19:05,667: topic[/clock] adding connection to [http://localhost:36515/], count 0
+[rospy.client][INFO] 2024-03-05 22:29:43,602: init_node, name[/teleop_twist_keyboard], pid[32087]
+[xmlrpc][INFO] 2024-03-05 22:29:43,603: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 22:29:43,603: Started XML-RPC server [http://localhost:35795/]
+[rospy.init][INFO] 2024-03-05 22:29:43,603: ROS Slave URI: [http://localhost:35795/]
+[rospy.impl.masterslave][INFO] 2024-03-05 22:29:43,603: _ready: http://localhost:35795/
+[rospy.registration][INFO] 2024-03-05 22:29:43,603: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 22:29:43,604: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 22:29:43,703: registered with master
+[rospy.rosout][INFO] 2024-03-05 22:29:43,703: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 22:29:43,706: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 22:29:43,706: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 22:29:43,707: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 22:29:43,911: topic[/clock] adding connection to [http://localhost:39239/], count 0
+[rospy.internal][INFO] 2024-03-05 22:29:44,006: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-05 22:29:44,006: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.core][INFO] 2024-03-05 22:31:22,349: signal_shutdown [atexit]
+[rospy.internal][INFO] 2024-03-05 22:31:22,351: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-05 22:31:22,351: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-05 22:31:22,352: topic[/clock] removing connection to http://localhost:39239/
+[rospy.impl.masterslave][INFO] 2024-03-05 22:31:22,352: atexit
+[rospy.client][INFO] 2024-03-05 22:41:49,224: init_node, name[/teleop_twist_keyboard], pid[35093]
+[xmlrpc][INFO] 2024-03-05 22:41:49,224: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 22:41:49,224: Started XML-RPC server [http://localhost:36357/]
+[rospy.init][INFO] 2024-03-05 22:41:49,225: ROS Slave URI: [http://localhost:36357/]
+[rospy.impl.masterslave][INFO] 2024-03-05 22:41:49,225: _ready: http://localhost:36357/
+[rospy.registration][INFO] 2024-03-05 22:41:49,225: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 22:41:49,225: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 22:41:49,325: registered with master
+[rospy.rosout][INFO] 2024-03-05 22:41:49,325: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 22:41:49,328: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 22:41:49,329: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 22:41:49,330: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 22:41:49,484: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-05 22:41:49,489: topic[/clock] adding connection to [http://localhost:44529/], count 0
+[rospy.internal][INFO] 2024-03-05 22:41:49,584: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.core][INFO] 2024-03-05 22:43:12,720: signal_shutdown [atexit]
+[rospy.internal][INFO] 2024-03-05 22:43:12,722: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-05 22:43:12,722: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-05 22:43:12,722: topic[/clock] removing connection to http://localhost:44529/
+[rospy.impl.masterslave][INFO] 2024-03-05 22:43:12,722: atexit
+[rospy.client][INFO] 2024-03-05 22:57:07,711: init_node, name[/teleop_twist_keyboard], pid[40698]
+[xmlrpc][INFO] 2024-03-05 22:57:07,711: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 22:57:07,711: Started XML-RPC server [http://localhost:44349/]
+[rospy.init][INFO] 2024-03-05 22:57:07,711: ROS Slave URI: [http://localhost:44349/]
+[rospy.impl.masterslave][INFO] 2024-03-05 22:57:07,711: _ready: http://localhost:44349/
+[rospy.registration][INFO] 2024-03-05 22:57:07,712: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 22:57:07,712: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 22:57:07,812: registered with master
+[rospy.rosout][INFO] 2024-03-05 22:57:07,812: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 22:57:07,814: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 22:57:07,815: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 22:57:07,815: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 22:57:07,977: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-05 22:57:07,987: topic[/clock] adding connection to [http://localhost:43777/], count 0
+[rospy.internal][INFO] 2024-03-05 22:57:08,082: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.core][INFO] 2024-03-05 22:57:18,776: signal_shutdown [atexit]
+[rospy.internal][INFO] 2024-03-05 22:57:18,778: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-05 22:57:18,778: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-05 22:57:18,778: topic[/clock] removing connection to http://localhost:43777/
+[rospy.impl.masterslave][INFO] 2024-03-05 22:57:18,778: atexit
+[rospy.client][INFO] 2024-03-05 23:04:12,727: init_node, name[/teleop_twist_keyboard], pid[44762]
+[xmlrpc][INFO] 2024-03-05 23:04:12,727: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 23:04:12,727: Started XML-RPC server [http://localhost:33189/]
+[rospy.init][INFO] 2024-03-05 23:04:12,727: ROS Slave URI: [http://localhost:33189/]
+[rospy.impl.masterslave][INFO] 2024-03-05 23:04:12,727: _ready: http://localhost:33189/
+[rospy.registration][INFO] 2024-03-05 23:04:12,728: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 23:04:12,728: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 23:04:12,828: registered with master
+[rospy.rosout][INFO] 2024-03-05 23:04:12,828: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 23:04:12,833: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 23:04:12,835: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 23:04:12,837: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 23:04:12,838: topic[/clock] adding connection to [http://localhost:45851/], count 0
+[rospy.internal][INFO] 2024-03-05 23:04:13,055: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-05 23:04:13,055: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-05 23:04:13,058: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rospy.core][INFO] 2024-03-05 23:04:19,615: signal_shutdown [atexit]
+[rospy.internal][INFO] 2024-03-05 23:04:19,619: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-05 23:04:19,619: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-05 23:04:19,619: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2024-03-05 23:04:19,620: topic[/clock] removing connection to http://localhost:45851/
+[rospy.impl.masterslave][INFO] 2024-03-05 23:04:19,620: atexit
+[rospy.client][INFO] 2024-03-05 23:04:56,590: init_node, name[/teleop_twist_keyboard], pid[45041]
+[xmlrpc][INFO] 2024-03-05 23:04:56,590: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 23:04:56,590: Started XML-RPC server [http://localhost:34593/]
+[rospy.impl.masterslave][INFO] 2024-03-05 23:04:56,590: _ready: http://localhost:34593/
+[rospy.registration][INFO] 2024-03-05 23:04:56,591: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2024-03-05 23:04:56,591: ROS Slave URI: [http://localhost:34593/]
+[xmlrpc][INFO] 2024-03-05 23:04:56,591: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 23:04:56,591: registered with master
+[rospy.rosout][INFO] 2024-03-05 23:04:56,591: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 23:04:56,594: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 23:04:56,594: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 23:04:56,595: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 23:04:56,821: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-05 23:04:56,822: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-05 23:04:56,928: topic[/clock] adding connection to [http://localhost:43797/], count 0
+[rospy.internal][INFO] 2024-03-05 23:04:58,731: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rospy.internal][INFO] 2024-03-05 23:08:06,474: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-05 23:08:21,032: topic[/clock] removing connection to http://localhost:43797/
+[rospy.internal][INFO] 2024-03-05 23:08:21,479: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2024-03-05 23:08:22,480: topic[/rosout] removing connection to /rosout
+[rospy.client][INFO] 2024-03-06 02:32:47,548: init_node, name[/teleop_twist_keyboard], pid[46948]
+[xmlrpc][INFO] 2024-03-06 02:32:47,548: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-06 02:32:47,549: Started XML-RPC server [http://localhost:34625/]
+[rospy.init][INFO] 2024-03-06 02:32:47,549: ROS Slave URI: [http://localhost:34625/]
+[rospy.impl.masterslave][INFO] 2024-03-06 02:32:47,549: _ready: http://localhost:34625/
+[rospy.registration][INFO] 2024-03-06 02:32:47,549: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-06 02:32:47,549: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-06 02:32:47,649: registered with master
+[rospy.rosout][INFO] 2024-03-06 02:32:47,649: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-06 02:32:47,651: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-06 02:32:47,652: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-06 02:32:47,653: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-06 02:32:47,845: topic[/clock] adding connection to [http://localhost:41219/], count 0
+[rospy.internal][INFO] 2024-03-06 02:32:47,939: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-06 02:32:47,943: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-06 02:32:49,849: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rospy.internal][INFO] 2024-03-06 02:33:53,861: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-06 02:34:08,785: topic[/clock] removing connection to http://localhost:41219/
+[rospy.internal][INFO] 2024-03-06 02:34:08,866: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2024-03-06 02:34:09,866: topic[/rosout] removing connection to /rosout
+[rospy.client][INFO] 2024-03-06 02:35:40,446: init_node, name[/teleop_twist_keyboard], pid[47442]
+[xmlrpc][INFO] 2024-03-06 02:35:40,446: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-06 02:35:40,446: Started XML-RPC server [http://localhost:46117/]
+[rospy.init][INFO] 2024-03-06 02:35:40,446: ROS Slave URI: [http://localhost:46117/]
+[rospy.impl.masterslave][INFO] 2024-03-06 02:35:40,446: _ready: http://localhost:46117/
+[rospy.registration][INFO] 2024-03-06 02:35:40,447: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-06 02:35:40,447: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-06 02:35:40,547: registered with master
+[rospy.rosout][INFO] 2024-03-06 02:35:40,547: initializing /rosout core topic
+[rospy.registration][ERROR] 2024-03-06 02:35:40,550: [Errno 111] Connection refused
+Unable to register with master node [http://localhost:11311]: master may not be running yet. Will keep trying.
+[rospy.core][INFO] 2024-03-06 02:36:15,851: signal_shutdown [signal-2]
+[rospy.registration][WARNING] 2024-03-06 02:36:15,852: cannot unregister with master due to network issues
+[rospy.impl.masterslave][INFO] 2024-03-06 02:36:15,853: signal-2
+[rospy.rosout][INFO] 2024-03-06 02:36:20,953: connected to core topic /rosout
+[rospy.simtime][ERROR] 2024-03-06 02:36:20,955: Unable to initialize /clock: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/simtime.py", line 79, in init_simtime
+    if not _is_use_simtime():
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/simtime.py", line 60, in _is_use_simtime
+    code, msg, val = m.getParam(rospy.names.get_caller_id(), _USE_SIMTIME)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rospy.core][INFO] 2024-03-06 02:36:21,019: signal_shutdown [atexit]
+[rospy.client][INFO] 2024-03-06 02:36:34,755: init_node, name[/teleop_twist_keyboard], pid[47597]
+[xmlrpc][INFO] 2024-03-06 02:36:34,756: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-06 02:36:34,756: Started XML-RPC server [http://localhost:46361/]
+[rospy.init][INFO] 2024-03-06 02:36:34,756: ROS Slave URI: [http://localhost:46361/]
+[rospy.impl.masterslave][INFO] 2024-03-06 02:36:34,756: _ready: http://localhost:46361/
+[rospy.registration][INFO] 2024-03-06 02:36:34,756: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-06 02:36:34,757: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-06 02:36:34,856: registered with master
+[rospy.rosout][INFO] 2024-03-06 02:36:34,856: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-06 02:36:34,859: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-06 02:36:34,859: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-06 02:36:34,860: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-06 02:36:35,064: topic[/clock] adding connection to [http://localhost:35953/], count 0
+[rospy.internal][INFO] 2024-03-06 02:36:35,156: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-06 02:36:35,157: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-06 02:36:36,967: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rospy.core][INFO] 2024-03-06 02:38:59,920: signal_shutdown [atexit]
+[rospy.internal][INFO] 2024-03-06 02:38:59,926: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-06 02:38:59,926: topic[/cmd_vel] removing connection to /twist_mux
+[rospy.internal][INFO] 2024-03-06 02:38:59,926: topic[/cmd_vel] removing connection to /gazebo
+[rospy.internal][INFO] 2024-03-06 02:38:59,927: topic[/clock] removing connection to http://localhost:35953/
+[rospy.impl.masterslave][INFO] 2024-03-06 02:38:59,927: atexit
+[rospy.client][INFO] 2024-03-06 12:14:10,347: init_node, name[/teleop_twist_keyboard], pid[5792]
+[xmlrpc][INFO] 2024-03-06 12:14:10,347: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-06 12:14:10,348: Started XML-RPC server [http://localhost:38851/]
+[rospy.init][INFO] 2024-03-06 12:14:10,348: ROS Slave URI: [http://localhost:38851/]
+[rospy.impl.masterslave][INFO] 2024-03-06 12:14:10,348: _ready: http://localhost:38851/
+[rospy.registration][INFO] 2024-03-06 12:14:10,348: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-06 12:14:10,348: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-06 12:14:10,448: registered with master
+[rospy.rosout][INFO] 2024-03-06 12:14:10,449: initializing /rosout core topic
+[rospy.registration][ERROR] 2024-03-06 12:14:10,453: [Errno 111] Connection refused
+Unable to register with master node [http://localhost:11311]: master may not be running yet. Will keep trying.
+[rospy.core][INFO] 2024-03-06 12:15:36,010: signal_shutdown [signal-2]
+[rospy.registration][WARNING] 2024-03-06 12:15:36,011: cannot unregister with master due to network issues
+[rospy.impl.masterslave][INFO] 2024-03-06 12:15:36,011: signal-2
+[rospy.rosout][INFO] 2024-03-06 12:15:41,111: connected to core topic /rosout
+[rospy.simtime][ERROR] 2024-03-06 12:15:41,115: Unable to initialize /clock: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/simtime.py", line 79, in init_simtime
+    if not _is_use_simtime():
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/simtime.py", line 60, in _is_use_simtime
+    code, msg, val = m.getParam(rospy.names.get_caller_id(), _USE_SIMTIME)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rospy.core][INFO] 2024-03-06 12:15:41,183: signal_shutdown [atexit]
+[rospy.client][INFO] 2024-03-12 12:59:01,012: init_node, name[/teleop_twist_keyboard], pid[5974]
+[xmlrpc][INFO] 2024-03-12 12:59:01,013: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-12 12:59:01,014: Started XML-RPC server [http://localhost:37401/]
+[rospy.init][INFO] 2024-03-12 12:59:01,014: ROS Slave URI: [http://localhost:37401/]
+[rospy.impl.masterslave][INFO] 2024-03-12 12:59:01,014: _ready: http://localhost:37401/
+[rospy.registration][INFO] 2024-03-12 12:59:01,014: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-12 12:59:01,014: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-12 12:59:01,114: registered with master
+[rospy.rosout][INFO] 2024-03-12 12:59:01,114: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-12 12:59:01,118: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-12 12:59:01,119: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-12 12:59:01,121: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-12 12:59:01,315: topic[/clock] adding connection to [http://localhost:42511/], count 0
+[rospy.internal][INFO] 2024-03-12 12:59:01,409: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-12 12:59:01,411: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-12 12:59:03,418: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rospy.client][INFO] 2024-03-12 13:02:42,719: init_node, name[/teleop_twist_keyboard], pid[7094]
+[xmlrpc][INFO] 2024-03-12 13:02:42,720: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-12 13:02:42,720: Started XML-RPC server [http://localhost:37693/]
+[rospy.init][INFO] 2024-03-12 13:02:42,720: ROS Slave URI: [http://localhost:37693/]
+[rospy.impl.masterslave][INFO] 2024-03-12 13:02:42,720: _ready: http://localhost:37693/
+[rospy.registration][INFO] 2024-03-12 13:02:42,721: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-12 13:02:42,721: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-12 13:02:42,821: registered with master
+[rospy.rosout][INFO] 2024-03-12 13:02:42,821: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-12 13:02:42,824: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-12 13:02:42,825: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-12 13:02:42,826: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-12 13:02:43,066: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-12 13:02:43,067: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-12 13:02:43,076: topic[/clock] adding connection to [http://localhost:43453/], count 0
+[rospy.internal][INFO] 2024-03-12 13:02:44,978: topic[/cmd_vel] adding connection to [/gazebo], count 1
+[rospy.client][INFO] 2024-03-12 13:04:09,267: init_node, name[/teleop_twist_keyboard], pid[8386]
+[xmlrpc][INFO] 2024-03-12 13:04:09,267: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-12 13:04:09,267: Started XML-RPC server [http://localhost:34731/]
+[rospy.init][INFO] 2024-03-12 13:04:09,268: ROS Slave URI: [http://localhost:34731/]
+[rospy.impl.masterslave][INFO] 2024-03-12 13:04:09,268: _ready: http://localhost:34731/
+[rospy.registration][INFO] 2024-03-12 13:04:09,268: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-12 13:04:09,268: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-12 13:04:09,368: registered with master
+[rospy.rosout][INFO] 2024-03-12 13:04:09,368: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-12 13:04:09,371: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-12 13:04:09,372: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-12 13:04:09,373: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-12 13:04:09,641: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2024-03-12 13:04:09,642: topic[/cmd_vel] adding connection to [/twist_mux], count 0
+[rospy.internal][INFO] 2024-03-12 13:04:09,649: topic[/clock] adding connection to [http://localhost:37739/], count 0
+[rospy.internal][INFO] 2024-03-12 13:04:11,451: topic[/cmd_vel] adding connection to [/gazebo], count 1

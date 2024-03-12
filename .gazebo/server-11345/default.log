@@ -1,0 +1,17 @@
+Gazebo multi-robot simulator, version 11.11.0
+Copyright (C) 2012 Open Source Robotics Foundation.
+Released under the Apache 2 License.
+http://gazebosim.org
+
+
+(1710263049 99124844) [Msg] Waiting for master.
+(1710263049 107085361) [Msg] Connected to gazebo master @ http://127.0.0.1:11345
+(1710263049 107117031) [Msg] Publicized address: 192.168.1.126
+(1710263049 482530332) [Msg] Loading world file [/usr/share/gazebo-11/worlds/robocup14_spl_field.world]
+(1710263049 487229610) [Err] [Server.cc:98] SDF is not valid, see errors above. This can lead to an unexpected behaviour.
+(1710263049 546869580) [Err] [World.cc:1285] Error advertising service [/RoboCup 14 SPL Field/shininess]
+(1710263049 548006157) [Err] [World.cc:1285] Error advertising service [/RoboCup 2014 SPL Goal/shininess]
+(1710263049 556453858) [Wrn] [World.cc:1255] Model with name [RoboCup 2014 SPL Goal] already exists. Not inserting model. This warning can be ignored in certain situations such as rewind during log playback.
+(1710263049 556517830) [Err] [World.cc:1285] Error advertising service [/RoboCup SPL Ball/shininess]
+(1710263049 573943970) Init world[default]
+(1710263051 106321006) applying Gaussian noise model with mean 0, stddev 0, bias 0

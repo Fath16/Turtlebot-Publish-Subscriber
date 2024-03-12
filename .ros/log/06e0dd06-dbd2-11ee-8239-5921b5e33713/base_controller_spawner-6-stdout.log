@@ -1,0 +1,9 @@
+[INFO] [1709740560.899841, 0.000000]: Controller Spawner: Waiting for service controller_manager/load_controller
+[INFO] [1709740563.309082, 0.452000]: Controller Spawner: Waiting for service controller_manager/switch_controller
+[INFO] [1709740563.311281, 0.454000]: Controller Spawner: Waiting for service controller_manager/unload_controller
+[INFO] [1709740563.312980, 0.456000]: Loading controller: smb_joint_publisher
+[INFO] [1709740563.318521, 0.462000]: Loading controller: smb_velocity_controller
+[INFO] [1709740563.340504, 0.484000]: Controller Spawner: Loaded controllers: smb_joint_publisher, smb_velocity_controller
+[INFO] [1709740563.343474, 0.487000]: Started controllers: smb_joint_publisher, smb_velocity_controller
+[INFO] [1709740575.604497, 12.705000]: Shutting down spawner. Stopping and unloading controllers...
+[INFO] [1709740575.605629, 12.706000]: Stopping all controllers...

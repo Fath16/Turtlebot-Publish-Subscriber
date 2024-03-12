@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" score="90.0390625" last-seen="1709734826"/>
+    <application id="brave-browser.desktop" score="12303" last-seen="1710264039"/>
+    <application id="gazebo.desktop" score="15" last-seen="1710263055"/>
+    <application id="apport-gtk.desktop" score="0" last-seen="1709738828"/>
+    <application id="org.gnome.gedit.desktop" score="74" last-seen="1710262703"/>
+    <application id="org.gnome.Nautilus.desktop" score="493.015625" last-seen="1710263380"/>
+    <application id="org.gnome.Totem.desktop" score="6" last-seen="1709734791"/>
+    <application id="com.obsproject.Studio.desktop" score="55" last-seen="1709735788"/>
+    <application id="firefox.desktop" score="19182.776611328125" last-seen="1708965598"/>
+    <application id="org.gnome.Terminal.desktop" score="4150.6061401367188" last-seen="1710264085"/>
+    <application id="org.gnome.DiskUtility.desktop" score="9" last-seen="1709734825"/>
+    <application id="thunderbird.desktop" score="0" last-seen="1709745850"/>
+    <application id="code.desktop" score="0" last-seen="1709696011"/>
+    <application id="gnome-system-monitor.desktop" score="3" last-seen="1709733537"/>
+  </context>
+</application-state>

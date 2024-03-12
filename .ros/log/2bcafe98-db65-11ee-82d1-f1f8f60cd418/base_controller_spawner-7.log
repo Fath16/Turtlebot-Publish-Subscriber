@@ -1,0 +1,32 @@
+[rospy.client][INFO] 2024-03-05 21:56:47,660: init_node, name[/base_controller_spawner], pid[25449]
+[xmlrpc][INFO] 2024-03-05 21:56:47,661: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 21:56:47,661: Started XML-RPC server [http://localhost:43319/]
+[rospy.init][INFO] 2024-03-05 21:56:47,661: ROS Slave URI: [http://localhost:43319/]
+[rospy.impl.masterslave][INFO] 2024-03-05 21:56:47,661: _ready: http://localhost:43319/
+[rospy.registration][INFO] 2024-03-05 21:56:47,662: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 21:56:47,662: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 21:56:47,762: registered with master
+[rospy.rosout][INFO] 2024-03-05 21:56:47,762: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 21:56:47,765: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 21:56:47,766: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 21:56:47,767: connected to core topic /clock
+[rosout][INFO] 2024-03-05 21:56:47,769: Controller Spawner: Waiting for service controller_manager/load_controller
+[rospy.internal][INFO] 2024-03-05 21:56:48,068: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2024-03-05 21:57:17,950: Waiting for /clock to be available...
+[rosout][INFO] 2024-03-05 21:57:17,953: Controller Spawner: Waiting for service controller_manager/load_controller
+[rosout][INFO] 2024-03-05 21:57:48,146: Waiting for /clock to be available...
+[rosout][INFO] 2024-03-05 21:57:48,150: Controller Spawner: Waiting for service controller_manager/load_controller
+[rosout][INFO] 2024-03-05 21:58:18,335: Waiting for /clock to be available...
+[rosout][INFO] 2024-03-05 21:58:18,338: Controller Spawner: Waiting for service controller_manager/load_controller
+[rosout][INFO] 2024-03-05 21:58:48,534: Waiting for /clock to be available...
+[rosout][INFO] 2024-03-05 21:58:48,536: Controller Spawner: Waiting for service controller_manager/load_controller
+[rosout][INFO] 2024-03-05 21:59:18,727: Waiting for /clock to be available...
+[rosout][INFO] 2024-03-05 21:59:18,730: Controller Spawner: Waiting for service controller_manager/load_controller
+[rosout][INFO] 2024-03-05 21:59:48,922: Waiting for /clock to be available...
+[rosout][INFO] 2024-03-05 21:59:48,925: Controller Spawner: Waiting for service controller_manager/load_controller
+[rospy.internal][INFO] 2024-03-05 22:00:00,390: topic[/clock] adding connection to [http://localhost:35043/], count 0
+[rosout][WARNING] 2024-03-05 22:00:19,080: Controller Spawner couldn't find the expected controller_manager ROS interface.
+[rospy.core][INFO] 2024-03-05 22:00:19,082: signal_shutdown [atexit]
+[rospy.internal][INFO] 2024-03-05 22:00:19,083: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-05 22:00:19,084: topic[/clock] removing connection to http://localhost:35043/
+[rospy.impl.masterslave][INFO] 2024-03-05 22:00:19,084: atexit

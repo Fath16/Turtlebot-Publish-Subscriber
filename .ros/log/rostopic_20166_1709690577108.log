@@ -1,0 +1,26 @@
+[rospy.client][INFO] 2024-03-05 21:02:57,127: init_node, name[/rostopic_20166_1709690577108], pid[20166]
+[xmlrpc][INFO] 2024-03-05 21:02:57,127: XML-RPC server binding to 127.0.0.1:0
+[xmlrpc][INFO] 2024-03-05 21:02:57,128: Started XML-RPC server [http://localhost:46741/]
+[rospy.init][INFO] 2024-03-05 21:02:57,128: ROS Slave URI: [http://localhost:46741/]
+[rospy.impl.masterslave][INFO] 2024-03-05 21:02:57,128: _ready: http://localhost:46741/
+[rospy.registration][INFO] 2024-03-05 21:02:57,128: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2024-03-05 21:02:57,128: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-03-05 21:02:57,228: registered with master
+[rospy.rosout][INFO] 2024-03-05 21:02:57,228: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-03-05 21:02:57,231: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-03-05 21:02:57,232: initializing /clock core topic
+[rospy.simtime][INFO] 2024-03-05 21:02:57,235: connected to core topic /clock
+[rospy.internal][INFO] 2024-03-05 21:02:57,238: topic[/clock] adding connection to [http://localhost:37357/], count 0
+[rospy.internal][INFO] 2024-03-05 21:02:57,248: topic[/gazebo/model_states] adding connection to [http://localhost:37357/], count 0
+[rospy.internal][INFO] 2024-03-05 21:02:57,484: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.core][INFO] 2024-03-05 21:03:05,876: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2024-03-05 21:03:05,881: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2024-03-05 21:03:05,881: topic[/clock] removing connection to http://localhost:37357/
+[rospy.internal][INFO] 2024-03-05 21:03:05,882: topic[/gazebo/model_states] removing connection to http://localhost:37357/
+[rospy.internal][ERROR] 2024-03-05 21:03:05,882: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 739, in receive_once
+    sock.setblocking(1)
+OSError: [Errno 9] Bad file descriptor
+
+[rospy.impl.masterslave][INFO] 2024-03-05 21:03:05,882: signal-2
+[rospy.core][INFO] 2024-03-05 21:03:06,478: signal_shutdown [atexit]

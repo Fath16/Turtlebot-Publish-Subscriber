@@ -1,0 +1,142 @@
+Dbg [parser.cc:574] Converting a deprecated source[/usr/share/gazebo-11/worlds/robocup14_spl_field.world].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Dbg [parser.cc:574] Converting a deprecated source[/usr/share/gazebo-11/models/sun/model.sdf].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Dbg [parser.cc:574] Converting a deprecated source[/usr/share/gazebo-11/models/ground_plane/model.sdf].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Dbg [parser.cc:574] Converting a deprecated source[/home/theanvin/.gazebo/models/robocup14_spl_field/model.sdf].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Dbg [parser.cc:574] Converting a deprecated source[/home/theanvin/.gazebo/models/robocup14_spl_goal/model.sdf].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Dbg [parser.cc:574] Converting a deprecated source[/home/theanvin/.gazebo/models/robocup14_spl_goal/model.sdf].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Dbg [parser.cc:574] Converting a deprecated source[/home/theanvin/.gazebo/models/robocup_spl_ball/model.sdf].
+Dbg [Converter.cc:68] Version[1.5] to Version[1.7]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]
+Warning [World.cc:264] Non-unique name[RoboCup 2014 SPL Goal] detected 2 times in XML children of world with name[default].
+Dbg [parser_urdf.cc:1511] extension [<plugin filename="libhector_gazebo_ros_imu.so" name="smb_imu_plugin"><updateRate>400</updateRate><bodyName>imu_link</bodyName><frameId>imu_link</frameId><topicName>/imu0</topicName><serviceName>/imu/calibrate</serviceName><accelOffset>0.0 0.0 0.0</accelOffset><accelDrift>0.0 0.0 0.0</accelDrift><accelDriftFrequency>0.0 0.0 0.0</accelDriftFrequency><accelGaussianNoise>0.0 0.0 0.0</accelGaussianNoise><rateOffset>0.0 0.0 0.0</rateOffset><rateDrift>0.0 0.0 0.0</rateDrift><rateDriftFrequency>0.0 0.0 0.0</rateDriftFrequency><rateGaussianNoise>0.0 0.0 0.0</rateGaussianNoise><headingOffset>0.0</headingOffset><headingDrift>0.0</headingDrift><headingDriftFrequency>0.0</headingDriftFrequency><headingGaussianNoise>0.0</headingGaussianNoise><robotNamespace>/</robotNamespace></plugin>] not converted from URDF, probably already in SDF format.
+Dbg [parser_urdf.cc:1511] extension [<sensor name="rslidar-VLP16" type="ray"><pose>0 0 0 0 0 0</pose><visualize>false</visualize><update_rate>10</update_rate><ray><scan><horizontal><samples>440</samples><resolution>1</resolution><min_angle>-3.141592653589793</min_angle><max_angle>3.141592653589793</max_angle></horizontal><vertical><samples>16</samples><resolution>1</resolution><min_angle>-0.2617993877991494</min_angle><max_angle>0.2617993877991494</max_angle></vertical></scan><range><min>0.3</min><max>131.0</max><resolution>0.001</resolution></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.0</stddev></noise></ray><plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller"><topicName>/rslidar_points</topicName><frameName>rslidar</frameName><organize_cloud>False</organize_cloud><min_range>0.9</min_range><max_range>130.0</max_range><gaussianNoise>0.008</gaussianNoise><robotNamespace>/</robotNamespace></plugin></sensor>] not converted from URDF, probably already in SDF format.
+Dbg [parser_urdf.cc:1511] extension [<plugin filename="libgazebo_ros_skid_steer_drive.so" name="gazebo_ros_control"><robotNamespace /><robotDescription>robot_description</robotDescription><broadcastTF>False</broadcastTF><leftFrontJoint>LF_WHEEL_JOINT</leftFrontJoint><rightFrontJoint>RF_WHEEL_JOINT</rightFrontJoint><leftRearJoint>LH_WHEEL_JOINT</leftRearJoint><rightRearJoint>RH_WHEEL_JOINT</rightRearJoint><wheelSeparation>0.57</wheelSeparation><wheelDiameter>0.38</wheelDiameter><torque>5.0</torque><commandTopic>cmd_vel</commandTopic><odometryTopic>odom</odometryTopic><odometryFrame>odom</odometryFrame><robotBaseFrame>base_link</robotBaseFrame><updateRate>100</updateRate><covariance_x>0.1</covariance_x><covariance_y>0.01</covariance_y><covariance_yaw>0.1</covariance_yaw></plugin>] not converted from URDF, probably already in SDF format.
+Dbg [parser_urdf.cc:1511] extension [<plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control"><robotNamespace /><robotParam>robot_description</robotParam></plugin>] not converted from URDF, probably already in SDF format.
+Dbg [parser_urdf.cc:418] Fixed Joint Reduction: extension lumping from [base_inertia] to [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [base_inertia]-->[base_link]: [<plugin filename="libhector_gazebo_ros_imu.so" name="smb_imu_plugin"><updateRate>400</updateRate><bodyName>imu_link</bodyName><frameId>imu_link</frameId><topicName>/imu0</topicName><serviceName>/imu/calibrate</serviceName><accelOffset>0.0 0.0 0.0</accelOffset><accelDrift>0.0 0.0 0.0</accelDrift><accelDriftFrequency>0.0 0.0 0.0</accelDriftFrequency><accelGaussianNoise>0.0 0.0 0.0</accelGaussianNoise><rateOffset>0.0 0.0 0.0</rateOffset><rateDrift>0.0 0.0 0.0</rateDrift><rateDriftFrequency>0.0 0.0 0.0</rateDriftFrequency><rateGaussianNoise>0.0 0.0 0.0</rateGaussianNoise><headingOffset>0.0</headingOffset><headingDrift>0.0</headingDrift><headingDriftFrequency>0.0</headingDriftFrequency><headingGaussianNoise>0.0</headingGaussianNoise><robotNamespace>/</robotNamespace></plugin>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [base_inertia]-->[base_link]: [<plugin filename="libgazebo_ros_skid_steer_drive.so" name="gazebo_ros_control"><robotNamespace /><robotDescription>robot_description</robotDescription><broadcastTF>False</broadcastTF><leftFrontJoint>LF_WHEEL_JOINT</leftFrontJoint><rightFrontJoint>RF_WHEEL_JOINT</rightFrontJoint><leftRearJoint>LH_WHEEL_JOINT</leftRearJoint><rightRearJoint>RH_WHEEL_JOINT</rightRearJoint><wheelSeparation>0.57</wheelSeparation><wheelDiameter>0.38</wheelDiameter><torque>5.0</torque><commandTopic>cmd_vel</commandTopic><odometryTopic>odom</odometryTopic><odometryFrame>odom</odometryFrame><robotBaseFrame>base_link</robotBaseFrame><updateRate>100</updateRate><covariance_x>0.1</covariance_x><covariance_y>0.01</covariance_y><covariance_yaw>0.1</covariance_yaw></plugin>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [base_inertia]-->[base_link]: [<plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control"><robotNamespace /><robotParam>robot_description</robotParam></plugin>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [base_inertia]-->[base_link]: [<sensor name="rslidar-VLP16" type="ray"><pose>0 0 0 0 0 0</pose><visualize>false</visualize><update_rate>10</update_rate><ray><scan><horizontal><samples>440</samples><resolution>1</resolution><min_angle>-3.141592653589793</min_angle><max_angle>3.141592653589793</max_angle></horizontal><vertical><samples>16</samples><resolution>1</resolution><min_angle>-0.2617993877991494</min_angle><max_angle>0.2617993877991494</max_angle></vertical></scan><range><min>0.3</min><max>131.0</max><resolution>0.001</resolution></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.0</stddev></noise></ray><plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller"><topicName>/rslidar_points</topicName><frameName>rslidar</frameName><organize_cloud>False</organize_cloud><min_range>0.9</min_range><max_range>130.0</max_range><gaussianNoise>0.008</gaussianNoise><robotNamespace>/</robotNamespace></plugin></sensor>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [base_inertia] with [base_link]
+Dbg [parser_urdf.cc:717] LINK NAME: [parent: base_link] from dMass
+Dbg [parser_urdf.cc:718]      MASS: [0]
+Dbg [parser_urdf.cc:719]        CG: [0, 0, 0]
+Dbg [parser_urdf.cc:721]         I: [0, 0, 0]
+Dbg [parser_urdf.cc:723]            [0, 0, 0]
+Dbg [parser_urdf.cc:725]            [0, 0, 0]
+Dbg [parser_urdf.cc:717] LINK NAME: [link : base_inertia] from dMass
+Dbg [parser_urdf.cc:718]      MASS: [40]
+Dbg [parser_urdf.cc:719]        CG: [0, 0, 0]
+Dbg [parser_urdf.cc:721]         I: [0.689697, 0, 0]
+Dbg [parser_urdf.cc:723]            [0, 1.34945, 0]
+Dbg [parser_urdf.cc:725]            [0, 0, 1.34945]
+Dbg [parser_urdf.cc:717] LINK NAME: [link in parent link: base_inertia] from dMass
+Dbg [parser_urdf.cc:718]      MASS: [40]
+Dbg [parser_urdf.cc:719]        CG: [0, 0, 0]
+Dbg [parser_urdf.cc:721]         I: [0.689697, 0, 0]
+Dbg [parser_urdf.cc:723]            [0, 1.34945, 0]
+Dbg [parser_urdf.cc:725]            [0, 0, 1.34945]
+Dbg [parser_urdf.cc:717] LINK NAME: [combined: base_link] from dMass
+Dbg [parser_urdf.cc:718]      MASS: [40]
+Dbg [parser_urdf.cc:719]        CG: [0, 0, 0]
+Dbg [parser_urdf.cc:721]         I: [0.689697, 0, 0]
+Dbg [parser_urdf.cc:723]            [0, 1.34945, 0]
+Dbg [parser_urdf.cc:725]            [0, 0, 1.34945]
+Dbg [parser_urdf.cc:733] LINK NAME: [base_link] from dMass
+Dbg [parser_urdf.cc:734]      MASS: [40]
+Dbg [parser_urdf.cc:735]        CG: [0, 0, 0]
+Dbg [parser_urdf.cc:738]         I: [0.689697, 0, 0]
+Dbg [parser_urdf.cc:741]            [0, 1.34945, 0]
+Dbg [parser_urdf.cc:744]            [0, 0, 1.34945]
+Dbg [parser_urdf.cc:418] Fixed Joint Reduction: extension lumping from [top] to [base_link]
+Dbg [parser_urdf.cc:2448]   REDUCE EXTENSION: moving reference from [top] to [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [top]-->[base_link]: [<plugin filename="libhector_gazebo_ros_imu.so" name="smb_imu_plugin"><updateRate>400</updateRate><bodyName>imu_link</bodyName><frameId>imu_link</frameId><topicName>/imu0</topicName><serviceName>/imu/calibrate</serviceName><accelOffset>0.0 0.0 0.0</accelOffset><accelDrift>0.0 0.0 0.0</accelDrift><accelDriftFrequency>0.0 0.0 0.0</accelDriftFrequency><accelGaussianNoise>0.0 0.0 0.0</accelGaussianNoise><rateOffset>0.0 0.0 0.0</rateOffset><rateDrift>0.0 0.0 0.0</rateDrift><rateDriftFrequency>0.0 0.0 0.0</rateDriftFrequency><rateGaussianNoise>0.0 0.0 0.0</rateGaussianNoise><headingOffset>0.0</headingOffset><headingDrift>0.0</headingDrift><headingDriftFrequency>0.0</headingDriftFrequency><headingGaussianNoise>0.0</headingGaussianNoise><robotNamespace>/</robotNamespace></plugin>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [top]-->[base_link]: [<plugin filename="libgazebo_ros_skid_steer_drive.so" name="gazebo_ros_control"><robotNamespace /><robotDescription>robot_description</robotDescription><broadcastTF>False</broadcastTF><leftFrontJoint>LF_WHEEL_JOINT</leftFrontJoint><rightFrontJoint>RF_WHEEL_JOINT</rightFrontJoint><leftRearJoint>LH_WHEEL_JOINT</leftRearJoint><rightRearJoint>RH_WHEEL_JOINT</rightRearJoint><wheelSeparation>0.57</wheelSeparation><wheelDiameter>0.38</wheelDiameter><torque>5.0</torque><commandTopic>cmd_vel</commandTopic><odometryTopic>odom</odometryTopic><odometryFrame>odom</odometryFrame><robotBaseFrame>base_link</robotBaseFrame><updateRate>100</updateRate><covariance_x>0.1</covariance_x><covariance_y>0.01</covariance_y><covariance_yaw>0.1</covariance_yaw></plugin>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [top]-->[base_link]: [<plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control"><robotNamespace /><robotParam>robot_description</robotParam></plugin>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2522]         INITIAL STRING link [top]-->[base_link]: [<sensor name="rslidar-VLP16" type="ray"><pose>0 0 0 0 0 0</pose><visualize>false</visualize><update_rate>10</update_rate><ray><scan><horizontal><samples>440</samples><resolution>1</resolution><min_angle>-3.141592653589793</min_angle><max_angle>3.141592653589793</max_angle></horizontal><vertical><samples>16</samples><resolution>1</resolution><min_angle>-0.2617993877991494</min_angle><max_angle>0.2617993877991494</max_angle></vertical></scan><range><min>0.3</min><max>131.0</max><resolution>0.001</resolution></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.0</stddev></noise></ray><plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller"><topicName>/rslidar_points</topicName><frameName>rslidar</frameName><organize_cloud>False</organize_cloud><min_range>0.9</min_range><max_range>130.0</max_range><gaussianNoise>0.008</gaussianNoise><robotNamespace>/</robotNamespace></plugin></sensor>]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:2514]   STRING REPLACE: instances of _link name [top] with [base_link]
+Dbg [parser_urdf.cc:944] lumping visual [] for link [top] to parent [base_link] with name [top]
+Dbg [parser_urdf.cc:1003] lumping collision [] for link [top] to parent [base_link] with name [top]
+Dbg [parser_urdf.cc:2719] [base_link] has no parent joint
+Dbg [parser_urdf.cc:2763] creating collision for link [base_link] collision []
+Dbg [parser_urdf.cc:2763] creating collision for link [base_link] collision [top]
+Dbg [parser_urdf.cc:2808] creating visual for link [base_link] visual []
+Dbg [parser_urdf.cc:2808] creating visual for link [base_link] visual [top]
+Dbg [parser_urdf.cc:2060] inserting extension with reference [base_link] into link.
+Dbg [parser_urdf.cc:2763] creating collision for link [LF_WHEEL] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [LF_WHEEL] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [LF_WHEEL] into link.
+Dbg [parser_urdf.cc:2763] creating collision for link [LH_WHEEL] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [LH_WHEEL] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [LH_WHEEL] into link.
+Dbg [parser_urdf.cc:2763] creating collision for link [RF_WHEEL] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [RF_WHEEL] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [RF_WHEEL] into link.
+Dbg [parser_urdf.cc:2763] creating collision for link [RH_WHEEL] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [RH_WHEEL] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [RH_WHEEL] into link.
+Dbg [parser_urdf.cc:2763] creating collision for link [imu_link] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [imu_link] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [imu_link] into link.
+Dbg [parser_urdf.cc:2808] creating visual for link [lidar_mount_link] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [lidar_mount_link] into link.
+Dbg [parser_urdf.cc:2763] creating collision for link [rslidar_base_link] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [rslidar_base_link] visual []
+Dbg [parser_urdf.cc:2808] creating visual for link [rslidar_base_link] visual []
+Dbg [parser_urdf.cc:2763] creating collision for link [rslidar] collision []
+Dbg [parser_urdf.cc:2808] creating visual for link [rslidar] visual []
+Dbg [parser_urdf.cc:2060] inserting extension with reference [rslidar] into link.
+Dbg [parser_urdf.cc:2643] urdf2sdf: link[top] has no inertia, parent joint [top_to_base_link] ignored.
+Dbg [parser_urdf.cc:2649] urdf2sdf: link[top] has no inertia, not modeled in sdf
+Dbg [parser_urdf.cc:1137] multiple consistent <static> exists with [false] due to fixed joint reduction.
+Dbg [parser_urdf.cc:1137] multiple consistent <static> exists with [false] due to fixed joint reduction.
+Dbg [parser.cc:483] Parsing from urdf.
