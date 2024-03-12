@@ -1,0 +1,2 @@
+smb_common/smb_control:smb_common/smb_description:smb_common/smb_gazebo:smb_common/teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/theanvin/ws/devel -DCMAKE_INSTALL_PREFIX=/home/theanvin/ws/install -G Unix Makefiles
