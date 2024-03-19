@@ -1,1712 +1,0 @@
-//
-// MoinMoin commonly used JavaScript functions
-//
-
-// We keep here the state of the search box
-searchIsDisabled = false;
-
-function searchChange(e) {
-    // Update search buttons status according to search box content.
-    // Ignore empty or whitespace search term.
-    var value = e.value.replace(/\s+/, '');
-    if (value == '' || searchIsDisabled) { 
-        searchSetDisabled(true);
-    } else {
-        searchSetDisabled(false);
-    }
-}
-
-function searchSetDisabled(flag) {
-    // Enable or disable search
-    document.getElementById('fullsearch').disabled = flag;
-    document.getElementById('titlesearch').disabled = flag;
-}
-
-function searchFocus(e) {
-    // Update search input content on focus
-    if (e.value == search_hint) {
-        e.value = '';
-        e.className = '';
-        searchIsDisabled = false;
-    }
-}
-
-function searchBlur(e) {
-    // Update search input content on blur
-    if (e.value == '') {
-        e.value = search_hint;
-        e.className = 'disabled';
-        searchIsDisabled = true;
-    }
-}
-
-function actionsMenuInit(title) {
-    // Initialize action menu
-    for (i = 0; i < document.forms.length; i++) {
-        var form = document.forms[i];
-        if (form.className == 'actionsmenu') {
-            // Check if this form needs update
-            var div = form.getElementsByTagName('div')[0];
-            var label = div.getElementsByTagName('label')[0];
-            if (label) {
-                // This is the first time: remove label and do buton.
-                div.removeChild(label);
-                var dobutton = div.getElementsByTagName('input')[0];
-                div.removeChild(dobutton);
-                // and add menu title
-                var select = div.getElementsByTagName('select')[0];
-                var item = document.createElement('option');
-                item.appendChild(document.createTextNode(title));
-                item.value = 'show';
-                select.insertBefore(item, select.options[0]);
-                select.selectedIndex = 0;
-            }
-        }
-    }
-}
-
-// use this instead of assigning to window.onload directly:
-function addLoadEvent(func) {
-    // alert("addLoadEvent " + func)
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            oldonload();
-            func();
-        }
-    }
-}
-
-// copy from fckeditor browser check code (fckeditor.js:298, function : FCKeditor_IsCompatibleBrowser)
-function can_use_gui_editor() {
-    var sAgent = navigator.userAgent.toLowerCase() ;
-
-    // Internet Explorer 5.5+
-    if ( /*@cc_on!@*/false && sAgent.indexOf("mac") == -1 )
-    {
-        var sBrowserVersion = navigator.appVersion.match(/MSIE (.\..)/)[1] ;
-        return ( sBrowserVersion >= 5.5 ) ;
-    }
-
-    // Gecko (Opera 9 tries to behave like Gecko at this point).
-    if ( navigator.product == "Gecko" && navigator.productSub >= 20030210 && !( typeof(opera) == 'object' && opera.postError ) )
-        return true ;
-
-    // Opera 9.50+
-    if ( window.opera && window.opera.version && parseFloat( window.opera.version() ) >= 9.5 )
-        return true ;
-
-    // Adobe AIR
-    // Checked before Safari because AIR have the WebKit rich text editor
-    // features from Safari 3.0.4, but the version reported is 420.
-    if ( sAgent.indexOf( ' adobeair/' ) != -1 )
-        return ( sAgent.match( / adobeair\/(\d+)/ )[1] >= 1 ) ; // Build must be at least v1
-
-    // Safari 3+
-    if ( sAgent.indexOf( ' applewebkit/' ) != -1 )
-        return ( sAgent.match( / applewebkit\/(\d+)/ )[1] >= 522 ) ;    // Build must be at least 522 (v3)
-
-    return false ;
-
-}
-
-
-function update_edit_links() {
-    // Update editlink according if if the browser is compatible
-    if (can_use_gui_editor() == false){
-        //alert("update_edit_links: can't use gui editor");
-        return;
-    }
-    var editlinks = document.getElementsByName("editlink");
-    for (i = 0; i < editlinks.length; i++) {
-        var link = editlinks[i];
-        href = link.href.replace('editor=textonly','editor=guipossible');
-        link.href = href;
-        //alert("update_edit_links: modified to guipossible");
-    }
-}
-
-
-function add_gui_editor_links() {
-    // Add gui editor link after the text editor link
-    
-    // If the variable is not set or browser is not compatible, exit
-    try {gui_editor_link_href}
-    catch (e) {
-        //alert("add_gui_editor_links: gui_editor_link_href not here");
-        return
-    }
-    if (can_use_gui_editor() == false){
-        //alert("add_gui_editor_links: can't use gui_editor");
-        return;
-    }
-    var all = document.getElementsByName('texteditlink');
-    for (i = 0; i < all.length; i++) {
-        var textEditorLink = all[i];
-        // Create a list item with a link
-        var guiEditorLink = document.createElement('a');
-        guiEditorLink.href = gui_editor_link_href;
-        var text = document.createTextNode(gui_editor_link_text);
-        guiEditorLink.appendChild(text);
-        var listItem = document.createElement('li')
-        listItem.appendChild(guiEditorLink);
-        // Insert in the editbar
-        var editbar = textEditorLink.parentNode.parentNode
-        var nextListItem = textEditorLink.parentNode.nextSibling;
-        editbar.insertBefore(listItem, nextListItem);
-        //alert("add_gui_editor_links: added gui editor link");
-    }
-}
- 
-
-function show_switch2gui() {
-    // Show switch to gui editor link if the browser is compatible
-    if (can_use_gui_editor() == false) return;
-    
-    var switch2gui = document.getElementById('switch2gui')
-    if (switch2gui) {
-        switch2gui.style.display = 'inline';
-    }
-}
-
-// for long documents with many comments this is expensive to calculate,
-// thus we keep it here:
-comments = null;
-
-function toggleComments() {
-    // Toggle visibility of every tag with class "comment"
-    for (i = 0; i < comments.length; i++){
-        el = comments[i];
-        if ( el.style.display != 'none' ) {
-            el.style.display = 'none';
-        } else {
-            el.style.display = '';
-        }
-    }
-}
-
-function show_toggleComments() {
-    // Show edit bar item for toggling inline comments on/off only if inline comments exist on the page
-    comments = getElementsByClassName('comment', null, document);
-    if (comments.length > 0) {
-        var buttons = getElementsByClassName('toggleCommentsButton', null, document);
-        for (i = 0; i < buttons.length; i++){
-            el = buttons[i];
-            el.style.display = '';
-        }
-    }
-}
-
-
-function load() {
-    // Do not name this "onload", it does not work with IE :-)
-    // TODO: create separate onload for each type of view and set the
-    // correct function name in the html. 
-    // e.g <body onlod='editor_onload()'>
-
-    // login focus
-    if (document.forms['loginform']) {
-        document.forms['loginform'].elements['name'].focus();
-    }
-    
-    // Page view stuff
-    update_edit_links();
-    add_gui_editor_links();
-    
-    // Editor stuff
-    show_switch2gui();
-
-    // Enable menu item "ToggleComments" if inline comments exist
-    show_toggleComments();
- 
-    // data browser widget
-    dbw_hide_buttons();
-}
-
-
-function before_unload(evt) {
-    // TODO: Better to set this in the editor html, as it does not make
-    // sense elsehwere.
-    // confirmleaving is available when editing
-    try {return confirmleaving();}
-    catch (e) {}
-}
-
-// Initialize after loading the page
-addLoadEvent(load)
-
-// Catch before unloading the page
-window.onbeforeunload = before_unload
-
-function dbw_update_search(dbw_id)
-{
-    var table = document.getElementById(dbw_id+'table');
-    var cell;
-    var shown;
-    var i
-    var cols = table.rows[0].cells.length;
-    var filter = new Array();
-    var dofilter = new Array();
-    var form = document.forms[dbw_id+'form'];
-
-    for (i = 0; i < cols; i++) {
-        dofilter[i] = false;
-        if (form[dbw_id+'filter'+i]) {
-            dofilter[i] = true;
-            filter[i] = form[dbw_id+'filter'+i].value;
-            if (filter[i] == '[all]')
-                dofilter[i] = false;
-            if (filter[i] == '[empty]')
-                filter[i] = '';
-        }
-    }
-
-    for (i = 1; i < table.rows.length; i++) {
-        var show = true;
-        for (col = 0; col < cols; col++) {
-            if (!dofilter[col])
-                continue;
-
-            cell = table.rows[i].cells[col];
-
-            if (filter[col] == '[notempty]') {
-                if (cell.abbr == '') {
-                    show = false;
-                    break;
-                }
-            } else if (filter[col] != cell.abbr) {
-                show = false;
-                break;
-            }
-        }
-        if (show)
-            table.rows[i].style.display = '';
-        else
-            table.rows[i].style.display = 'none';
-    }
-}
-
-function dbw_hide_buttons() {
-    var form;
-    var elem;
-    var name;
-
-    for (var fidx = 0; fidx < document.forms.length; fidx++) {
-        form = document.forms[fidx];
-        for (var eidx = 0; eidx < form.elements.length; eidx++) {
-            elem = form.elements[eidx];
-            name = elem.name;
-            if (name) {
-                if (name.indexOf('dbw.') >= 0 && name.substr(-7) == '.submit')
-                    elem.style.display = 'none';
-            }
-        }
-    }
-}
-
-/*  getElementsByClassName
-    Developed by Robert Nyman, http://www.robertnyman.com
-    Code/licensing: http://code.google.com/p/getelementsbyclassname/ (MIT license)
-    Version: 1.0.1
-*/  
-var getElementsByClassName = function (className, tag, elm){
-    if (document.getElementsByClassName) {
-        getElementsByClassName = function (className, tag, elm) {
-            elm = elm || document;
-            var elements = elm.getElementsByClassName(className),
-                nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
-                returnElements = [],
-                current;
-            for(var i=0, il=elements.length; i<il; i+=1){
-                current = elements[i];
-                if(!nodeName || nodeName.test(current.nodeName)) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        };
-    }
-    else if (document.evaluate) {
-        getElementsByClassName = function (className, tag, elm) {
-            tag = tag || "*";
-            elm = elm || document;
-            var classes = className.split(" "),
-                classesToCheck = "",
-                xhtmlNamespace = "http://www.w3.org/1999/xhtml",
-                namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
-                returnElements = [],
-                elements,
-                node;
-            for(var j=0, jl=classes.length; j<jl; j+=1){
-                classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
-            }
-            try {
-                elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
-            }
-            catch (e) {
-                elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
-            }
-            while ((node = elements.iterateNext())) {
-                returnElements.push(node);
-            }
-            return returnElements;
-        };
-    }
-    else {
-        getElementsByClassName = function (className, tag, elm) {
-            tag = tag || "*";
-            elm = elm || document;
-            var classes = className.split(" "),
-                classesToCheck = [],
-                elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
-                current,
-                returnElements = [],
-                match;
-            for(var k=0, kl=classes.length; k<kl; k+=1){
-                classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
-            }
-            for(var l=0, ll=elements.length; l<ll; l+=1){
-                current = elements[l];
-                match = false;
-                for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
-                    match = classesToCheck[m].test(current.className);
-                    if (!match) {
-                        break;
-                    }
-                }
-                if (match) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        };
-    }
-    return getElementsByClassName(className, tag, elm);
-};
-
-
-// ===========================================================================
-// The following functions are part of scroll edit textarea on double-click
-//
-// This code is public domain (or primarily public domain).
-// Do whatever you want with it.  In particular, you may release it under
-// GPL 2.0 or incorporate it into projects that use GPL 2.0.
-// -- Radomir Dopieralski and Roger D. Haase
-
-// Debugging helpers
-//  save debugging state in cookie - presence of a cookie means debugging mode is on
-cookiePath = '/';
-function autoScrollSetCookie (){
-    document.cookie = 'autoscrolldebug=on; path=' + cookiePath + '; ';
-}
-function autoScrollDeleteCookie (){
-    var cookie_date = new Date ( );  // current date & time
-    cookie_date.setTime ( cookie_date.getTime() - 1 );
-    document.cookie = 'autoscrolldebug=; expires=' + cookie_date.toGMTString() + '; path=' + cookiePath + '; ';
-}
-function autoScrollGetCookie (){
-    var results = document.cookie.match ( '(^|;) ?' + "autoscrolldebug" + '=([^;]*)(;|$)' );
-    if ( results ) {
-        return ( unescape ( results[2] ) );
-    } else {
-        return null;
-    }
-}
-// turn on debugging mode by previewing, saving or reading a page with "auto scroll debug on" within an h1 header
-// = My Page auto scroll debug on =
-// once set on,debug mode says on for current session or until turned off with
-// = My Page auto scroll debug off =
-autoScrollDebugOn = 0;
-// this function executed on page load
-function turnDebugOnOrOff () {
-    // set global variable for use by cookie functions
-    cookiePath = document.getElementsByName('edit_on_doubleclick')[0].content;
-    var hOnes = document.getElementsByTagName('H1');
-    for (var i = 0; i < hOnes.length; ++i) {
-        var header = hOnes[i].textContent || hOnes[i].innerText;
-        if (header.match ('auto scroll debug on')) {
-            autoScrollSetCookie ();
-        }
-        if (header.match ('auto scroll debug off')) {
-            autoScrollDeleteCookie ();
-        }
-    }
-    if (autoScrollGetCookie ()) {
-        autoScrollDebugOn = 1;
-    } else {
-        autoScrollDebugOn = 0;
-    }
-}
-
-// functions used for testing - mouseover tooltip with tagName and scroll line number
-function doMouseOver(e) {
-    var targ = getNode(e);
-    targ.title = 'tagName='+targ.tagName+'  line='+targ.scrollLine;
-}
-function doMouseOut(e) {
-    var targ = getNode(e);
-    targ.removeAttribute('title');
-}
-// add leading zeros to hours, minutes, seconds, milliseconds
-function leadingZeros (nbr,count) { 
-    var strNbr = nbr + '';
-    while (strNbr.length < count) {
-        strNbr = "0" + strNbr; 
-    }
-    return strNbr;
-}
-// format hours, minutes, seconds, and ms
-function formatTime (t) {
-    var sHours = leadingZeros (t.getHours(), 2);
-    var sMinutes = leadingZeros (t.getMinutes (), 2);
-    var sSeconds = leadingZeros (t.getSeconds (), 2);
-    var sMilliseconds = leadingZeros (t.getMilliseconds (), 3);
-    return sHours + ':' + sMinutes + ':' + sSeconds + ':' + sMilliseconds;
-}
-
-// this variable is available as easy way to display trace info
-autoDebugTrace = '';
-function showStartStopTimes (startTime) {
-    // display a message with start and end times at top of page
-    var endTime = new Date();
-    var tStart ='auto scroll debug on -- Initialization start H:M:S:ms=' + formatTime (startTime);
-    var tEnd = '  end H:M:S:ms=' + formatTime (endTime);
-    var timingMsg = document.createElement ('P');
-    timingMsg.innerHTML = tStart + tEnd;
-    timingMsg.style. color = "red";
-    var contentDiv;
-    if (document.getElementById ('preview')) {
-        contentDiv = document.getElementById ('preview');
-    } else {
-        contentDiv = document.getElementById ('content');
-    }
-    contentDiv.insertBefore (timingMsg, contentDiv.firstChild);
-    // display trace info is there is any
-    if (autoDebugTrace) {
-        alert(autoDebugTrace);
-    }
-}
-// end of debugging helpers
-
-// this scrolls the textarea after a doubleclick - jumpLine is scroll-to line
-function scrollTextarea(jumpLine) {
-    var txtBox = document.getElementById('editor-textarea');
-    scroll(0,0); 
-    if (txtBox) {
-        // Calculate the cursor position - IE supports innerText, not textContent
-        var textLines = txtBox.textContent || txtBox.innerText;
-        textLines = textLines.match(/(.*(\r\n|\r|\n))/g);
-        var scrolledText = '';
-        for (var i = 0; i < textLines.length && i < jumpLine; ++i) {
-            scrolledText += textLines[i];
-        }
-        txtBox.focus();
-        if (txtBox.setSelectionRange) {
-            // Standard-compliant browsers
-            // Move the cursor
-            txtBox.setSelectionRange(scrolledText.length, scrolledText.length);
-            // Calculate how far to scroll, by putting the text that is to be
-            // above the fold in a DIV, and checking the DIV's height.
-            var scrollPre = document.createElement('pre');
-            txtBox.parentNode.appendChild(scrollPre);
-            var style = window.getComputedStyle(txtBox, '');
-            scrollPre.style.lineHeight = style.lineHeight;
-            scrollPre.style.fontFamily = style.fontFamily;
-            scrollPre.style.fontSize = style.fontSize;
-            scrollPre.style.padding = 0;
-            scrollPre.style.letterSpacing = style.letterSpacing;
-            // Different browsers call this value differently:
-            try { scrollPre.style.whiteSpace = "-moz-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "-o-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "pre-wrap"; } catch(e) {}
-            scrollPre.textContent = scrolledText;
-            txtBox.scrollTop = scrollPre.scrollHeight-100;
-            scrollPre.parentNode.removeChild(scrollPre);
-        } else if (txtBox.createTextRange) {
-            // Microsoft Internet Explorer
-            // We don't need to scroll, it will do it automatically, just move
-            // the cursor.
-            var range = txtBox.createTextRange();
-            range.collapse(true);
-            range.moveEnd('character', scrolledText.length);
-            range.moveStart('character', scrolledText.length);
-            range.select();
-            txtBox.__column = 1;
-        }
-    } 
-}
-
-// stop event bubbling
-function stopBubbling(e) {
-    if (e.stopPropagation) {
-        e.stopPropagation(); 
-    }
-    e.cancelBubble = true;
-}
-
-// stop bubbling and return event node 
-function getNode(e) {
-    // window.event and e.srcElement are IE
-    var e = e || window.event;
-    var targ = e.target || e.srcElement;
-    if (targ.nodeType == 3) {
-        // workaround safari
-        targ = targ.parentNode;
-    }
-    stopBubbling(e);
-    return targ;
-}
-
-// add action=edit and scrollLine to document.location
-function doActionEdit(e) {
-    var targ = getNode(e);
-    // MoinMoin counts starting with 1, scrollTextarea starts with 0
-    document.location.search = '?action=edit&line='+(targ.scrollLine-1);
-}
-
-// scroll textarea on this page
-function doTextareaScroll(e) {
-    var targ = getNode(e);
-    scrollTextarea(targ.scrollLine-1);
-}
-
-// This is the function that registers double clicks.
-// isPreview is true if the current page is an edit draft preview
-function setCallback(node, line, isPreview) {
-    if (node.scrollLine) {
-        // this node already processed
-        return;
-    } else {
-        node.scrollLine = line;
-        if(window.addEventListener){ 
-            if (isPreview) {
-                node.addEventListener('dblclick',doTextareaScroll,false);
-            } else {
-                node.addEventListener('dblclick',doActionEdit,false);
-            }
-            if (autoScrollDebugOn) {
-                node.addEventListener('mouseover', doMouseOver,false); 
-                node.addEventListener('mouseout',doMouseOut,false); 
-            }
-        } else {
-            // IE
-            if (isPreview) {
-                node.attachEvent('ondblclick',doTextareaScroll);
-            } else {
-                node.attachEvent('ondblclick',doActionEdit);
-            }
-            if (autoScrollDebugOn) {
-                node.attachEvent('onmouseover', doMouseOver,false); 
-                node.attachEvent('onmouseout',doMouseOut,false);
-            }
-        }
-    }
-}
-
-// walk part of DOM and add doubleclick function to all nodes with tagNames
-function walkDom (someNode, lineNbr, isPreview, nextId, topId) {
-
-    //~ // handle special cases of paragraph on line after <<TOC>> and ---- (horizontal rule)
-    //~ //   But this effects paragraphs on multiple lines: doubleclick goes to paragraph bottom rather than top.
-    //~ //   Seems best to live with TOC and HR problem and wait for Moin2.
-    //~ var next1, next2, next3;
-    //~ var nextNbr = 'line-' + (lineNbr-0+1);
-    //~ if (someNode.parentNode.tagName == 'P' && someNode.parentNode.scrollLine) {
-        //~ next1 = someNode.nextSibling;
-        //~ if (next1 && next1.tagName != 'SPAN') {
-            //~ next2 = next1.nextSibling;
-        //~ }
-        //~ if (next2 && next2.id == nextNbr) {
-            //~ alert('Correcting scrollLine='+lineNbr);
-            //~ someNode.parentNode.scrollLine = lineNbr;
-            //~ return;
-        //~ }
-    //~ }
-    
-    var ie8LoopCounter = 0;
-    var doChild = true;
-    while (!(someNode.id == nextId) && !(someNode.id == topId)) {
-        // workaround IE8 bug:  http://moinmo.in/MoinMoinBugs/FormInsideTableCausesIE8ScriptLoop
-        ie8LoopCounter += 1;
-        if (ie8LoopCounter > 10000) {
-            return;
-        }
-        
-        // add children, add siblings, add parent
-        if (doChild && someNode.firstChild) {
-            someNode = someNode.firstChild;
-        } else {
-            doChild = true;
-            if (someNode.nextSibling) {
-                someNode = someNode.nextSibling;
-            } else {
-                if (someNode.parentNode.nextSibling) {
-                someNode = someNode.parentNode.nextSibling;
-                } else {
-                    doChild = false;
-                    someNode = someNode.parentNode.parentNode;
-                }
-            }
-        }
-        if (doChild && someNode.tagName && !(someNode.id == nextId) && !(someNode.id == topId)) {
-            setCallback(someNode, lineNbr, isPreview);
-        }
-    }
-}
-
-// run during page load when user may edit current page OR is viewing draft preview
-function setSpanTags(isPreview) {
-    var startTime = new Date();
-    // find all the SPAN tags with an ID beginning with "line-"
-    var spanTags = document.getElementsByTagName('span');
-    var marks = [];
-    for (var i = 0; i < spanTags.length; ++i) {
-        if (spanTags[i].id && spanTags[i].id.substring(0, 5) == 'line-') {
-            marks.push(spanTags[i]);
-        }
-    }
-    var top = document.getElementById('content');
-    var bottom = document.getElementById('bottom');
-    // add expected stopping point to end of array for convenience
-    if (bottom) {
-        marks.push(bottom); 
-    } else {
-        if (autoScrollDebugOn) {
-            alert("auto scroll debug 1: document.getElementById('bottom') failed");
-        }
-    }
-    var skipTo = -1; 
-    // loop through span tags and apply double-click events to appropriate node(s) 
-    for (i = 0; i < marks.length-1; ++i) {
-        var mark = marks[i];
-        // skip span tags generated by embedded parsers
-        if (i > skipTo) {
-            // split the ID into parts: looks like "line-22" or "line-22-1"
-            var lineParts = mark.id.split('-');
-            var line = lineParts[1];
-            if (lineParts.length == 3) {
-                // have found output from embedded parser
-                // find next span id that looks like "line-n" and the "line-n-n" just before it
-                var j = i - 0;
-                while (lineParts.length == 3) {
-                    j++;
-                    lineParts = marks[j].id.split('-');
-                }
-                // determine how many lines, starting line number, and add double-click events
-                var nbrParsedLines = j - i;
-                var parsedLineNbr = lineParts[1] - nbrParsedLines - 1;
-                for (var k = 0; k < nbrParsedLines; ++k) { 
-                    if (marks[i+k] && marks[i+k+1] && marks[i+k+1].id) {
-                        walkDom (marks[i+k], parsedLineNbr+k, isPreview, marks[i+k+1].id, top.id);
-                    } else {
-                        if (autoScrollDebugOn) {
-                            alert('auto scroll debug 2: skipping walkDom, i=' + i + ' k=' + k + ' marks[i].id=' + marks[i].id);
-                        }
-                    }
-                }
-                // done with embedded parser lines, tell main loop to skip these
-                skipTo = j - 1; 
-            } else {
-                // walk part of DOM and apply doubleclick function to every node with a tagname
-                if (marks[i+1] && marks[i+1].id) {
-                    walkDom (mark, line, isPreview, marks[i+1].id, top.id);
-                } else {
-                    if (autoScrollDebugOn) {
-                        alert('auto scroll debug 3: skipping walkDom, i=' + i + ' marks[i].id=' + marks[i].id);
-                    }
-                }
-            }
-        }
-    }
-    if (autoScrollDebugOn && document.getElementById('content'))  {
-        for (i = 0; i < marks.length-1; ++i) {
-            marks[i].innerHTML = ' ' + marks[i].id + ' ';
-            marks[i].style. color = "red";
-        }
-        showStartStopTimes(startTime);
-    }
-}
-
-// test to see if this user has selected or defaulted to edit_on_doubleclick AND
-// whether we are viewing a page, editing a page, or previewing an edit draft 
-function scrollTextareaInit() {
-    // look for meta tag -- is edit_on_doubleclick present?
-    if (!document.getElementsByName('edit_on_doubleclick').length) {
-        return;
-    }
-    turnDebugOnOrOff ();
-    // are we viewing a page - both gui and text editors will have button named button_save
-    if (!document.getElementsByName('button_save').length) {
-        setSpanTags(0);
-        return;
-    }
-    // we are in editor -- is there a line number specified in URL?
-    var lineMatch = document.location.search.match(/line=(\d*)/);
-    if (lineMatch) {
-        scrollTextarea(lineMatch[1]);
-        return;
-    } 
-    if (document.getElementById('preview')) {
-        // is an editor preview
-        setSpanTags(1);
-    }
-}
-
-// The DOM ready check for Internet Explorer
-function ieScrollCheck() {
-	try {
-		// If IE is used, use the trick by Diego Perini
-		document.documentElement.doScroll("left");
-	} catch( error ) {
-		setTimeout( ieScrollCheck, 1 );
-		return;
-	}
-    scrollTextareaInit();
-}
-
-// run auto scroll init As Soon As Possible -- prior to onload for modern browsers
-function runASAP() {
-    if (document.addEventListener) { 
-        // Firefox 3.6, Chrome 4.0.249.89, Safari for Windows 4.04, Opera 10.5beta, and maybe older versions
-        // schedule func to be run when DOM complete, usually before last image loaded
-        document.addEventListener("DOMContentLoaded", scrollTextareaInit, false);
-    } else {
-        if (document.documentElement.doScroll && window == window.top) {
-            // IE 5-8 and not using frames
-            ieScrollCheck();
-        } else {
-            addLoadEvent(scrollTextareaInit);
-        }
-    }
-}
-// auto scroll initialization starts here
-runASAP();
-
-        xå  xxå‡   20230309232128-8l6   http://wiki.ros.org/moin_static197/common/js/common.js   ;m  //
-// MoinMoin commonly used JavaScript functions
-//
-
-// We keep here the state of the search box
-searchIsDisabled = false;
-
-function searchChange(e) {
-    // Update search buttons status according to search box content.
-    // Ignore empty or whitespace search term.
-    var value = e.value.replace(/\s+/, '');
-    if (value == '' || searchIsDisabled) { 
-        searchSetDisabled(true);
-    } else {
-        searchSetDisabled(false);
-    }
-}
-
-function searchSetDisabled(flag) {
-    // Enable or disable search
-    document.getElementById('fullsearch').disabled = flag;
-    document.getElementById('titlesearch').disabled = flag;
-}
-
-function searchFocus(e) {
-    // Update search input content on focus
-    if (e.value == search_hint) {
-        e.value = '';
-        e.className = '';
-        searchIsDisabled = false;
-    }
-}
-
-function searchBlur(e) {
-    // Update search input content on blur
-    if (e.value == '') {
-        e.value = search_hint;
-        e.className = 'disabled';
-        searchIsDisabled = true;
-    }
-}
-
-function actionsMenuInit(title) {
-    // Initialize action menu
-    for (i = 0; i < document.forms.length; i++) {
-        var form = document.forms[i];
-        if (form.className == 'actionsmenu') {
-            // Check if this form needs update
-            var div = form.getElementsByTagName('div')[0];
-            var label = div.getElementsByTagName('label')[0];
-            if (label) {
-                // This is the first time: remove label and do buton.
-                div.removeChild(label);
-                var dobutton = div.getElementsByTagName('input')[0];
-                div.removeChild(dobutton);
-                // and add menu title
-                var select = div.getElementsByTagName('select')[0];
-                var item = document.createElement('option');
-                item.appendChild(document.createTextNode(title));
-                item.value = 'show';
-                select.insertBefore(item, select.options[0]);
-                select.selectedIndex = 0;
-            }
-        }
-    }
-}
-
-// use this instead of assigning to window.onload directly:
-function addLoadEvent(func) {
-    // alert("addLoadEvent " + func)
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            oldonload();
-            func();
-        }
-    }
-}
-
-// copy from fckeditor browser check code (fckeditor.js:298, function : FCKeditor_IsCompatibleBrowser)
-function can_use_gui_editor() {
-    var sAgent = navigator.userAgent.toLowerCase() ;
-
-    // Internet Explorer 5.5+
-    if ( /*@cc_on!@*/false && sAgent.indexOf("mac") == -1 )
-    {
-        var sBrowserVersion = navigator.appVersion.match(/MSIE (.\..)/)[1] ;
-        return ( sBrowserVersion >= 5.5 ) ;
-    }
-
-    // Gecko (Opera 9 tries to behave like Gecko at this point).
-    if ( navigator.product == "Gecko" && navigator.productSub >= 20030210 && !( typeof(opera) == 'object' && opera.postError ) )
-        return true ;
-
-    // Opera 9.50+
-    if ( window.opera && window.opera.version && parseFloat( window.opera.version() ) >= 9.5 )
-        return true ;
-
-    // Adobe AIR
-    // Checked before Safari because AIR have the WebKit rich text editor
-    // features from Safari 3.0.4, but the version reported is 420.
-    if ( sAgent.indexOf( ' adobeair/' ) != -1 )
-        return ( sAgent.match( / adobeair\/(\d+)/ )[1] >= 1 ) ; // Build must be at least v1
-
-    // Safari 3+
-    if ( sAgent.indexOf( ' applewebkit/' ) != -1 )
-        return ( sAgent.match( / applewebkit\/(\d+)/ )[1] >= 522 ) ;    // Build must be at least 522 (v3)
-
-    return false ;
-
-}
-
-
-function update_edit_links() {
-    // Update editlink according if if the browser is compatible
-    if (can_use_gui_editor() == false){
-        //alert("update_edit_links: can't use gui editor");
-        return;
-    }
-    var editlinks = document.getElementsByName("editlink");
-    for (i = 0; i < editlinks.length; i++) {
-        var link = editlinks[i];
-        href = link.href.replace('editor=textonly','editor=guipossible');
-        link.href = href;
-        //alert("update_edit_links: modified to guipossible");
-    }
-}
-
-
-function add_gui_editor_links() {
-    // Add gui editor link after the text editor link
-    
-    // If the variable is not set or browser is not compatible, exit
-    try {gui_editor_link_href}
-    catch (e) {
-        //alert("add_gui_editor_links: gui_editor_link_href not here");
-        return
-    }
-    if (can_use_gui_editor() == false){
-        //alert("add_gui_editor_links: can't use gui_editor");
-        return;
-    }
-    var all = document.getElementsByName('texteditlink');
-    for (i = 0; i < all.length; i++) {
-        var textEditorLink = all[i];
-        // Create a list item with a link
-        var guiEditorLink = document.createElement('a');
-        guiEditorLink.href = gui_editor_link_href;
-        var text = document.createTextNode(gui_editor_link_text);
-        guiEditorLink.appendChild(text);
-        var listItem = document.createElement('li')
-        listItem.appendChild(guiEditorLink);
-        // Insert in the editbar
-        var editbar = textEditorLink.parentNode.parentNode
-        var nextListItem = textEditorLink.parentNode.nextSibling;
-        editbar.insertBefore(listItem, nextListItem);
-        //alert("add_gui_editor_links: added gui editor link");
-    }
-}
- 
-
-function show_switch2gui() {
-    // Show switch to gui editor link if the browser is compatible
-    if (can_use_gui_editor() == false) return;
-    
-    var switch2gui = document.getElementById('switch2gui')
-    if (switch2gui) {
-        switch2gui.style.display = 'inline';
-    }
-}
-
-// for long documents with many comments this is expensive to calculate,
-// thus we keep it here:
-comments = null;
-
-function toggleComments() {
-    // Toggle visibility of every tag with class "comment"
-    for (i = 0; i < comments.length; i++){
-        el = comments[i];
-        if ( el.style.display != 'none' ) {
-            el.style.display = 'none';
-        } else {
-            el.style.display = '';
-        }
-    }
-}
-
-function show_toggleComments() {
-    // Show edit bar item for toggling inline comments on/off only if inline comments exist on the page
-    comments = getElementsByClassName('comment', null, document);
-    if (comments.length > 0) {
-        var buttons = getElementsByClassName('toggleCommentsButton', null, document);
-        for (i = 0; i < buttons.length; i++){
-            el = buttons[i];
-            el.style.display = '';
-        }
-    }
-}
-
-
-function load() {
-    // Do not name this "onload", it does not work with IE :-)
-    // TODO: create separate onload for each type of view and set the
-    // correct function name in the html. 
-    // e.g <body onlod='editor_onload()'>
-
-    // login focus
-    if (document.forms['loginform']) {
-        document.forms['loginform'].elements['name'].focus();
-    }
-    
-    // Page view stuff
-    update_edit_links();
-    add_gui_editor_links();
-    
-    // Editor stuff
-    show_switch2gui();
-
-    // Enable menu item "ToggleComments" if inline comments exist
-    show_toggleComments();
- 
-    // data browser widget
-    dbw_hide_buttons();
-}
-
-
-function before_unload(evt) {
-    // TODO: Better to set this in the editor html, as it does not make
-    // sense elsehwere.
-    // confirmleaving is available when editing
-    try {return confirmleaving();}
-    catch (e) {}
-}
-
-// Initialize after loading the page
-addLoadEvent(load)
-
-// Catch before unloading the page
-window.onbeforeunload = before_unload
-
-function dbw_update_search(dbw_id)
-{
-    var table = document.getElementById(dbw_id+'table');
-    var cell;
-    var shown;
-    var i
-    var cols = table.rows[0].cells.length;
-    var filter = new Array();
-    var dofilter = new Array();
-    var form = document.forms[dbw_id+'form'];
-
-    for (i = 0; i < cols; i++) {
-        dofilter[i] = false;
-        if (form[dbw_id+'filter'+i]) {
-            dofilter[i] = true;
-            filter[i] = form[dbw_id+'filter'+i].value;
-            if (filter[i] == '[all]')
-                dofilter[i] = false;
-            if (filter[i] == '[empty]')
-                filter[i] = '';
-        }
-    }
-
-    for (i = 1; i < table.rows.length; i++) {
-        var show = true;
-        for (col = 0; col < cols; col++) {
-            if (!dofilter[col])
-                continue;
-
-            cell = table.rows[i].cells[col];
-
-            if (filter[col] == '[notempty]') {
-                if (cell.abbr == '') {
-                    show = false;
-                    break;
-                }
-            } else if (filter[col] != cell.abbr) {
-                show = false;
-                break;
-            }
-        }
-        if (show)
-            table.rows[i].style.display = '';
-        else
-            table.rows[i].style.display = 'none';
-    }
-}
-
-function dbw_hide_buttons() {
-    var form;
-    var elem;
-    var name;
-
-    for (var fidx = 0; fidx < document.forms.length; fidx++) {
-        form = document.forms[fidx];
-        for (var eidx = 0; eidx < form.elements.length; eidx++) {
-            elem = form.elements[eidx];
-            name = elem.name;
-            if (name) {
-                if (name.indexOf('dbw.') >= 0 && name.substr(-7) == '.submit')
-                    elem.style.display = 'none';
-            }
-        }
-    }
-}
-
-/*  getElementsByClassName
-    Developed by Robert Nyman, http://www.robertnyman.com
-    Code/licensing: http://code.google.com/p/getelementsbyclassname/ (MIT license)
-    Version: 1.0.1
-*/  
-var getElementsByClassName = function (className, tag, elm){
-    if (document.getElementsByClassName) {
-        getElementsByClassName = function (className, tag, elm) {
-            elm = elm || document;
-            var elements = elm.getElementsByClassName(className),
-                nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
-                returnElements = [],
-                current;
-            for(var i=0, il=elements.length; i<il; i+=1){
-                current = elements[i];
-                if(!nodeName || nodeName.test(current.nodeName)) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        };
-    }
-    else if (document.evaluate) {
-        getElementsByClassName = function (className, tag, elm) {
-            tag = tag || "*";
-            elm = elm || document;
-            var classes = className.split(" "),
-                classesToCheck = "",
-                xhtmlNamespace = "http://www.w3.org/1999/xhtml",
-                namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
-                returnElements = [],
-                elements,
-                node;
-            for(var j=0, jl=classes.length; j<jl; j+=1){
-                classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
-            }
-            try {
-                elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
-            }
-            catch (e) {
-                elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
-            }
-            while ((node = elements.iterateNext())) {
-                returnElements.push(node);
-            }
-            return returnElements;
-        };
-    }
-    else {
-        getElementsByClassName = function (className, tag, elm) {
-            tag = tag || "*";
-            elm = elm || document;
-            var classes = className.split(" "),
-                classesToCheck = [],
-                elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
-                current,
-                returnElements = [],
-                match;
-            for(var k=0, kl=classes.length; k<kl; k+=1){
-                classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
-            }
-            for(var l=0, ll=elements.length; l<ll; l+=1){
-                current = elements[l];
-                match = false;
-                for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
-                    match = classesToCheck[m].test(current.className);
-                    if (!match) {
-                        break;
-                    }
-                }
-                if (match) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        };
-    }
-    return getElementsByClassName(className, tag, elm);
-};
-
-
-// ===========================================================================
-// The following functions are part of scroll edit textarea on double-click
-//
-// This code is public domain (or primarily public domain).
-// Do whatever you want with it.  In particular, you may release it under
-// GPL 2.0 or incorporate it into projects that use GPL 2.0.
-// -- Radomir Dopieralski and Roger D. Haase
-
-// Debugging helpers
-//  save debugging state in cookie - presence of a cookie means debugging mode is on
-cookiePath = '/';
-function autoScrollSetCookie (){
-    document.cookie = 'autoscrolldebug=on; path=' + cookiePath + '; ';
-}
-function autoScrollDeleteCookie (){
-    var cookie_date = new Date ( );  // current date & time
-    cookie_date.setTime ( cookie_date.getTime() - 1 );
-    document.cookie = 'autoscrolldebug=; expires=' + cookie_date.toGMTString() + '; path=' + cookiePath + '; ';
-}
-function autoScrollGetCookie (){
-    var results = document.cookie.match ( '(^|;) ?' + "autoscrolldebug" + '=([^;]*)(;|$)' );
-    if ( results ) {
-        return ( unescape ( results[2] ) );
-    } else {
-        return null;
-    }
-}
-// turn on debugging mode by previewing, saving or reading a page with "auto scroll debug on" within an h1 header
-// = My Page auto scroll debug on =
-// once set on,debug mode says on for current session or until turned off with
-// = My Page auto scroll debug off =
-autoScrollDebugOn = 0;
-// this function executed on page load
-function turnDebugOnOrOff () {
-    // set global variable for use by cookie functions
-    cookiePath = document.getElementsByName('edit_on_doubleclick')[0].content;
-    var hOnes = document.getElementsByTagName('H1');
-    for (var i = 0; i < hOnes.length; ++i) {
-        var header = hOnes[i].textContent || hOnes[i].innerText;
-        if (header.match ('auto scroll debug on')) {
-            autoScrollSetCookie ();
-        }
-        if (header.match ('auto scroll debug off')) {
-            autoScrollDeleteCookie ();
-        }
-    }
-    if (autoScrollGetCookie ()) {
-        autoScrollDebugOn = 1;
-    } else {
-        autoScrollDebugOn = 0;
-    }
-}
-
-// functions used for testing - mouseover tooltip with tagName and scroll line number
-function doMouseOver(e) {
-    var targ = getNode(e);
-    targ.title = 'tagName='+targ.tagName+'  line='+targ.scrollLine;
-}
-function doMouseOut(e) {
-    var targ = getNode(e);
-    targ.removeAttribute('title');
-}
-// add leading zeros to hours, minutes, seconds, milliseconds
-function leadingZeros (nbr,count) { 
-    var strNbr = nbr + '';
-    while (strNbr.length < count) {
-        strNbr = "0" + strNbr; 
-    }
-    return strNbr;
-}
-// format hours, minutes, seconds, and ms
-function formatTime (t) {
-    var sHours = leadingZeros (t.getHours(), 2);
-    var sMinutes = leadingZeros (t.getMinutes (), 2);
-    var sSeconds = leadingZeros (t.getSeconds (), 2);
-    var sMilliseconds = leadingZeros (t.getMilliseconds (), 3);
-    return sHours + ':' + sMinutes + ':' + sSeconds + ':' + sMilliseconds;
-}
-
-// this variable is available as easy way to display trace info
-autoDebugTrace = '';
-function showStartStopTimes (startTime) {
-    // display a message with start and end times at top of page
-    var endTime = new Date();
-    var tStart ='auto scroll debug on -- Initialization start H:M:S:ms=' + formatTime (startTime);
-    var tEnd = '  end H:M:S:ms=' + formatTime (endTime);
-    var timingMsg = document.createElement ('P');
-    timingMsg.innerHTML = tStart + tEnd;
-    timingMsg.style. color = "red";
-    var contentDiv;
-    if (document.getElementById ('preview')) {
-        contentDiv = document.getElementById ('preview');
-    } else {
-        contentDiv = document.getElementById ('content');
-    }
-    contentDiv.insertBefore (timingMsg, contentDiv.firstChild);
-    // display trace info is there is any
-    if (autoDebugTrace) {
-        alert(autoDebugTrace);
-    }
-}
-// end of debugging helpers
-
-// this scrolls the textarea after a doubleclick - jumpLine is scroll-to line
-function scrollTextarea(jumpLine) {
-    var txtBox = document.getElementById('editor-textarea');
-    scroll(0,0); 
-    if (txtBox) {
-        // Calculate the cursor position - IE supports innerText, not textContent
-        var textLines = txtBox.textContent || txtBox.innerText;
-        textLines = textLines.match(/(.*(\r\n|\r|\n))/g);
-        var scrolledText = '';
-        for (var i = 0; i < textLines.length && i < jumpLine; ++i) {
-            scrolledText += textLines[i];
-        }
-        txtBox.focus();
-        if (txtBox.setSelectionRange) {
-            // Standard-compliant browsers
-            // Move the cursor
-            txtBox.setSelectionRange(scrolledText.length, scrolledText.length);
-            // Calculate how far to scroll, by putting the text that is to be
-            // above the fold in a DIV, and checking the DIV's height.
-            var scrollPre = document.createElement('pre');
-            txtBox.parentNode.appendChild(scrollPre);
-            var style = window.getComputedStyle(txtBox, '');
-            scrollPre.style.lineHeight = style.lineHeight;
-            scrollPre.style.fontFamily = style.fontFamily;
-            scrollPre.style.fontSize = style.fontSize;
-            scrollPre.style.padding = 0;
-            scrollPre.style.letterSpacing = style.letterSpacing;
-            // Different browsers call this value differently:
-            try { scrollPre.style.whiteSpace = "-moz-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "-o-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "pre-wrap"; } catch(e) {}
-            scrollPre.textContent = scrolledText;
-            txtBox.scrollTop = scrollPre.scrollHeight-100;
-            scrollPre.parentNode.removeChild(scrollPre);
-        } else if (txtBox.createTextRange) {
-            // Microsoft Internet Explorer
-            // We don't need to scroll, it will do it automatically, just move
-            // the cursor.
-            var range = txtBox.createTextRange();
-            range.collapse(true);
-            range.moveEnd('character', scrolledText.length);
-            range.moveStart('character', scrolledText.length);
-            range.select();
-            txtBox.__column = 1;
-        }
-    } 
-}
-
-// stop event bubbling
-function stopBubbling(e) {
-    if (e.stopPropagation) {
-        e.stopPropagation(); 
-    }
-    e.cancelBubble = true;
-}
-
-// stop bubbling and return event node 
-function getNode(e) {
-    // window.event and e.srcElement are IE
-    var e = e || window.event;
-    var targ = e.target || e.srcElement;
-    if (targ.nodeType == 3) {
-        // workaround safari
-        targ = targ.parentNode;
-    }
-    stopBubbling(e);
-    return targ;
-}
-
-// add action=edit and scrollLine to document.location
-function doActionEdit(e) {
-    var targ = getNode(e);
-    // MoinMoin counts starting with 1, scrollTextarea starts with 0
-    document.location.search = '?action=edit&line='+(targ.scrollLine-1);
-}
-
-// scroll textarea on this page
-function doTextareaScroll(e) {
-    var targ = getNode(e);
-    scrollTextarea(targ.scrollLine-1);
-}
-
-// This is the function that registers double clicks.
-// isPreview is true if the current page is an edit draft preview
-function setCallback(node, line, isPreview) {
-    if (node.scrollLine) {
-        // this node already processed
-        return;
-    } else {
-        node.scrollLine = line;
-        if(window.addEventListener){ 
-            if (isPreview) {
-                node.addEventListener('dblclick',doTextareaScroll,false);
-            } else {
-                node.addEventListener('dblclick',doActionEdit,false);
-            }
-            if (autoScrollDebugOn) {
-                node.addEventListener('mouseover', doMouseOver,false); 
-                node.addEventListener('mouseout',doMouseOut,false); 
-            }
-        } else {
-            // IE
-            if (isPreview) {
-                node.attachEvent('ondblclick',doTextareaScroll);
-            } else {
-                node.attachEvent('ondblclick',doActionEdit);
-            }
-            if (autoScrollDebugOn) {
-                node.attachEvent('onmouseover', doMouseOver,false); 
-                node.attachEvent('onmouseout',doMouseOut,false);
-            }
-        }
-    }
-}
-
-// walk part of DOM and add doubleclick function to all nodes with tagNames
-function walkDom (someNode, lineNbr, isPreview, nextId, topId) {
-
-    //~ // handle special cases of paragraph on line after <<TOC>> and ---- (horizontal rule)
-    //~ //   But this effects paragraphs on multiple lines: doubleclick goes to paragraph bottom rather than top.
-    //~ //   Seems best to live with TOC and HR problem and wait for Moin2.
-    //~ var next1, next2, next3;
-    //~ var nextNbr = 'line-' + (lineNbr-0+1);
-    //~ if (someNode.parentNode.tagName == 'P' && someNode.parentNode.scrollLine) {
-        //~ next1 = someNode.nextSibling;
-        //~ if (next1 && next1.tagName != 'SPAN') {
-            //~ next2 = next1.nextSibling;
-        //~ }
-        //~ if (next2 && next2.id == nextNbr) {
-            //~ alert('Correcting scrollLine='+lineNbr);
-            //~ someNode.parentNode.scrollLine = lineNbr;
-            //~ return;
-        //~ }
-    //~ }
-    
-    var ie8LoopCounter = 0;
-    var doChild = true;
-    while (!(someNode.id == nextId) && !(someNode.id == topId)) {
-        // workaround IE8 bug:  http://moinmo.in/MoinMoinBugs/FormInsideTableCausesIE8ScriptLoop
-        ie8LoopCounter += 1;
-        if (ie8LoopCounter > 10000) {
-            return;
-        }
-        
-        // add children, add siblings, add parent
-        if (doChild && someNode.firstChild) {
-            someNode = someNode.firstChild;
-        } else {
-            doChild = true;
-            if (someNode.nextSibling) {
-                someNode = someNode.nextSibling;
-            } else {
-                if (someNode.parentNode.nextSibling) {
-                someNode = someNode.parentNode.nextSibling;
-                } else {
-                    doChild = false;
-                    someNode = someNode.parentNode.parentNode;
-                }
-            }
-        }
-        if (doChild && someNode.tagName && !(someNode.id == nextId) && !(someNode.id == topId)) {
-            setCallback(someNode, lineNbr, isPreview);
-        }
-    }
-}
-
-// run during page load when user may edit current page OR is viewing draft preview
-function setSpanTags(isPreview) {
-    var startTime = new Date();
-    // find all the SPAN tags with an ID beginning with "line-"
-    var spanTags = document.getElementsByTagName('span');
-    var marks = [];
-    for (var i = 0; i < spanTags.length; ++i) {
-        if (spanTags[i].id && spanTags[i].id.substring(0, 5) == 'line-') {
-            marks.push(spanTags[i]);
-        }
-    }
-    var top = document.getElementById('content');
-    var bottom = document.getElementById('bottom');
-    // add expected stopping point to end of array for convenience
-    if (bottom) {
-        marks.push(bottom); 
-    } else {
-        if (autoScrollDebugOn) {
-            alert("auto scroll debug 1: document.getElementById('bottom') failed");
-        }
-    }
-    var skipTo = -1; 
-    // loop through span tags and apply double-click events to appropriate node(s) 
-    for (i = 0; i < marks.length-1; ++i) {
-        var mark = marks[i];
-        // skip span tags generated by embedded parsers
-        if (i > skipTo) {
-            // split the ID into parts: looks like "line-22" or "line-22-1"
-            var lineParts = mark.id.split('-');
-            var line = lineParts[1];
-            if (lineParts.length == 3) {
-                // have found output from embedded parser
-                // find next span id that looks like "line-n" and the "line-n-n" just before it
-                var j = i - 0;
-                while (lineParts.length == 3) {
-                    j++;
-                    lineParts = marks[j].id.split('-');
-                }
-                // determine how many lines, starting line number, and add double-click events
-                var nbrParsedLines = j - i;
-                var parsedLineNbr = lineParts[1] - nbrParsedLines - 1;
-                for (var k = 0; k < nbrParsedLines; ++k) { 
-                    if (marks[i+k] && marks[i+k+1] && marks[i+k+1].id) {
-                        walkDom (marks[i+k], parsedLineNbr+k, isPreview, marks[i+k+1].id, top.id);
-                    } else {
-                        if (autoScrollDebugOn) {
-                            alert('auto scroll debug 2: skipping walkDom, i=' + i + ' k=' + k + ' marks[i].id=' + marks[i].id);
-                        }
-                    }
-                }
-                // done with embedded parser lines, tell main loop to skip these
-                skipTo = j - 1; 
-            } else {
-                // walk part of DOM and apply doubleclick function to every node with a tagname
-                if (marks[i+1] && marks[i+1].id) {
-                    walkDom (mark, line, isPreview, marks[i+1].id, top.id);
-                } else {
-                    if (autoScrollDebugOn) {
-                        alert('auto scroll debug 3: skipping walkDom, i=' + i + ' marks[i].id=' + marks[i].id);
-                    }
-                }
-            }
-        }
-    }
-    if (autoScrollDebugOn && document.getElementById('content'))  {
-        for (i = 0; i < marks.length-1; ++i) {
-            marks[i].innerHTML = ' ' + marks[i].id + ' ';
-            marks[i].style. color = "red";
-        }
-        showStartStopTimes(startTime);
-    }
-}
-
-// test to see if this user has selected or defaulted to edit_on_doubleclick AND
-// whether we are viewing a page, editing a page, or previewing an edit draft 
-function scrollTextareaInit() {
-    // look for meta tag -- is edit_on_doubleclick present?
-    if (!document.getElementsByName('edit_on_doubleclick').length) {
-        return;
-    }
-    turnDebugOnOrOff ();
-    // are we viewing a page - both gui and text editors will have button named button_save
-    if (!document.getElementsByName('button_save').length) {
-        setSpanTags(0);
-        return;
-    }
-    // we are in editor -- is there a line number specified in URL?
-    var lineMatch = document.location.search.match(/line=(\d*)/);
-    if (lineMatch) {
-        scrollTextarea(lineMatch[1]);
-        return;
-    } 
-    if (document.getElementById('preview')) {
-        // is an editor preview
-        setSpanTags(1);
-    }
-}
-
-// The DOM ready check for Internet Explorer
-function ieScrollCheck() {
-	try {
-		// If IE is used, use the trick by Diego Perini
-		document.documentElement.doScroll("left");
-	} catch( error ) {
-		setTimeout( ieScrollCheck, 1 );
-		return;
-	}
-    scrollTextareaInit();
-}
-
-// run auto scroll init As Soon As Possible -- prior to onload for modern browsers
-function runASAP() {
-    if (document.addEventListener) { 
-        // Firefox 3.6, Chrome 4.0.249.89, Safari for Windows 4.04, Opera 10.5beta, and maybe older versions
-        // schedule func to be run when DOM complete, usually before last image loaded
-        document.addEventListener("DOMContentLoaded", scrollTextareaInit, false);
-    } else {
-        if (document.documentElement.doScroll && window == window.top) {
-            // IE 5-8 and not using frames
-            ieScrollCheck();
-        } else {
-            addLoadEvent(scrollTextareaInit);
-        }
-    }
-}
-// auto scroll initialization starts here
-runASAP();
-
-Ó˜ÀÙ'  "      yìÊ      searchIsDisabled   Ù°ÿp      searchChange   _ô      \s+    ^_Èı      searchSetDisabled      €­¥      flag   ¸O€      document   tÇ£      getElementById     ®Eá 
-      fullsearch     zƒw      disabled	   ê¤¾Ì      titlesearch
-    àšY~      searchFocus    ùüÚô      search_hint    6CY>	      className      pí¹ö
-      searchBlur     {0¼B      actionsMenuInit    ÒE      title      èy¥      forms      *gÒÛ      form   >Å°ù      actionsmenu    œ³æÙ      div    XFZ      getElementsByTagName   ùúK      removeChild    îãQÛ      dobutton   1<ë      select     ı„Ìº      item   DC      createElement      Ú|`›      option     ­$~      appendChild    6!†Ì      createTextNode     H‡’K      show   åLÉ2      insertBefore    :y‹      options     ›¼3      selectedIndex!      9I      addLoadEvent"   ÉÙfv      func#   GÌ;	      oldonload$      ø2‡‰      window%     ‡Ä{p      onload&     U\4      can_use_gui_editor'     Ïs       sAgent(     ¹ã+	      navigator)      “‹ˆ	      userAgent*      R‰Do      toLowerCase+    ÚEœÁ      indexOf-    É'      sBrowserVersion.    B¿õ'
-      appVersion/     æ/      MSIE (.\..)0     2i      product1    Å†‰<      Gecko2      9e£ì
-      productSub3     t9,¬      opera4      šë&	      postError5      ¾_ã      version6    ƒq¯)
-       adobeair/7     n™s       adobeair\/(\d+)8   4“ƒ       applewebkit/9      ÷H'       applewebkit\/(\d+):    åäC      update_edit_links;      Ñ–Aˆ	      editlinks<      5Ì|      getElementsByName=      9Q      editlink>   üIëÕ      link?   »©`X      href@   hA½g      editor=textonlyA    õ/ÎÃ      editor=guipossibleB     “w      add_gui_editor_linksC   i¶Ì      gui_editor_link_hrefD   £Õ/å      allE    ¼-Hş      texteditlinkF   hi2      textEditorLinkG     W ”Ê      guiEditorLinkH      ˆ3Àµ      textI   RÂĞ
-      gui_editor_link_textJ   GQ:      listItemK   j§ú5      editbarL    ¥_ÏÓ
-      parentNodeM     `±¿z      nextListItemN   „'n      nextSiblingO    G0¿:      show_switch2guiP    ªkÎ
-      switch2guiQ     e}Ÿ      displayR    TŸn“      inlineS     4sß      commentsT   Œ…Ê       toggleCommentsU     ,½      noneV   ¾7í0      show_toggleCommentsW    ÿåÀ      getElementsByClassNameX     µ©8      commentY    \‹      buttonsZ    ®sCå      toggleCommentsButton[   2‡U)      load\   íìÖ	      loginform]      _Tôï      elements^   KÌí      focus_      Ó«eÄ      dbw_hide_buttons`   JÖÃ      before_unloada      óg      evtb    ë÷J      confirmleavingc     õØB      onbeforeunloadd     _%a      dbw_update_searche      ½c’      dbw_idf     ¶d”      tableg      sœïa      cellh   oZë‘      showni      %ëù~      colsj   ÓQn$      rowsk   g[×      cellsl      >	Å      filterm     ^AµÔ      dofiltern   å™n-      [all]o      ƒx Ç      [empty]p    P{ñ      colq    &¿‚Õ
-      [notempty]r     ¸/n      abbrs   dš!      elemt   å/Öe      fidxu   ÄSˆÑ      eidxv   –gà      dbw.w   6™fØ      substrx     ®±½      .submity    sN1G      tagz    Ğ@§      elm{    U5_      nodeName|   ñûà…      \b}     ï¥      returnElements~     †ƒëı      current    ğ„u2      push€   ES…      evaluate   uwı      classes‚    <€ P      classesToCheckƒ     ªÂ$      xhtmlNamespace„     O
-1      http://www.w3.org/1999/xhtml…   |! ó      namespaceResolver†      •,¯p      documentElement‡    ÷—{      namespaceURIˆ   &`¡İ      node‰   ƒÔº&      [contains(concat(' ', @class, ' '), ' Š     %Şß       ')]‹   ‹ÌıÏ      .//Œ    É
-[      iterateNext    <áº      (^|\s)     á„9      (\s|$)     fTE‡
-      cookiePath     ˜öJ      autoScrollSetCookie‘    _YNx      cookie’     ú’,¯      autoscrolldebug=on; path=“      ^*V¸      ; ”     ½(Á      autoScrollDeleteCookie•     Ãè?÷      cookie_date–    °Œô      setTime—    uô.      getTime˜    |*	Û      autoscrolldebug=; expires=™     Ñ¦Ò      ; path=š    
-&Ä      autoScrollGetCookie    £Ê      autoScrollDebugOnŸ      å£@Œ      turnDebugOnOrOff    ˆÛ¦¬      edit_on_doubleclick¡    4WÈ      content¢    <>b>      hOnes£      kˆÿ      header¤     bÈÅe      textContent¥    ­	v	      innerText¦      _Ãq      auto scroll debug on§   ØI°}      auto scroll debug off¨      äô•0      doMouseOver©    ¯ä,:      targª   
-mğê      getNode«    @      tagName=¬   ŞŞØ      tagName­    V³º        line=®    æ—m—
-      scrollLine¯     o½t¢
-      doMouseOut°     $Gˆ       removeAttribute±    ó.Qu      leadingZeros²   ü²F      nbr³    Y$RÑ      strNbr´     IRõ
-      formatTimeµ     ¶û´Í      sHours¶     }:Cå      getHours·   dS      sMinutes¸   *ª¸?
-      getMinutes¹     üÄçb      sSecondsº   ñê®ş
-      getSeconds»     ¼TQ      sMilliseconds¼      ~BoÀ      getMilliseconds½    ‹oü9      autoDebugTrace¾     /m      showStartStopTimes¿     ÀI¼«	      startTimeÀ      !N]      endTimeÁ    .mT      tStartÂ     «±¢6      auto scroll debug on -- Initialization start H:M:S:ms=Ã     ”È‡a      tEndÄ   Ò(        end H:M:S:ms=Å    ½3‹	      timingMsgÆ      QÃ:	      innerHTMLÇ      ì
-—      colorÈ      ä×ê      redÉ    •~u
-      contentDivÊ     7Á™      previewË    ~Xßº
-      firstChildÌ     Òï¢Z      alertÍ      8ïºî      scrollTextareaÎ     §‡m­      jumpLineÏ   D1      txtBoxĞ     ºx»      editor-textareaÑ    \zû      scrollÒ     Uh«
-	      textLinesÓ      -ë~ç      (.*(\r\n|\r|\n))Ô   „4§      scrolledTextÕ   #«,      setSelectionRangeÖ      ½–¬	      scrollPre×      ú4Ã      preØ    Æ‚é‘      getComputedStyleÙ   .î
-      lineHeightÚ     ±ÔQa
-      fontFamilyÛ     ÷e      fontSizeÜ   /á«B      paddingİ    ”!O      letterSpacingŞ      aØúˆ
-      whiteSpaceß     öòB¸      -moz-pre-wrapà      yº¤N      -o-pre-wrapá    ecV•	      -pre-wrapâ      B
-¤      pre-wrapã   “Gë	      scrollTopä      LsA¿      scrollHeightå   ÜYk1      createTextRangeæ    xÃÊ      rangeç      #ç¢      collapseè   ı€Ó‡      moveEndé    Ğ´•$	      characterê      È’ƒz	      moveStartë      zNŸ      __columnì   ±‡7¼      stopBubblingí   õ/F/      stopPropagationî    É E      cancelBubbleï   II·P      eventğ      |5Î
-      srcElementñ     'J¯(      nodeTypeò   hğ0      doActionEditó   0+QA      locationô    ÓÉq      ?action=edit&line=õ     ·ˆ’      doTextareaScrollö   gÉFá      setCallback÷    ¾­iE	      isPreviewø       rO      addEventListenerù   õ      dblclickú   y÷‹„	      mouseoverû       ©ıc      mouseoutü   VõZ/      attachEventı    `õ¤ş
-      ondblclickş     ‰ßÎ      onmouseoverÿ    <"w
-      onmouseout     0ûB™      walkDom   b¼şU      someNode  eL      lineNbr   øFk      nextId    ëìBÂ      topId     ÿüü      ie8LoopCounter    Š—£      doChild   ú2G3      setSpanTags   üº`<      spanTags	  ±4PB      span
-  ,4‚º      marks     ßYã	      substring     qàêH      line-     $Ãç      top   @Èÿ~      bottom    ¶Ç^a=      auto scroll debug 1: document.getElementById('bottom') failed     Æí;      skipTo    ßqØú      mark  µ¨Ã€	      lineParts     
-•j      nbrParsedLines    N«ëm      parsedLineNbr     š’ş‰)      auto scroll debug 2: skipping walkDom, i=     ì±\       k=   ›™       marks[i].id=     { 'G)      auto scroll debug 3: skipping walkDom, i=     #Ñ¹¤      scrollTextareaInit    [Zğ»      button_save   =»Ò<	      lineMatch     ›^¿
-      line=(\d*)    *%ÃÄ      ieScrollCheck     €„–b      doScroll  õ]‡      left   ştuW      error!     3AtÙ
-      setTimeout"    `­.      runASAP#   KjH      DOMContentLoaded$  \¾
-#      (^|;) ?autoscrolldebug=([^;]*)(;|$)%   
-Ú˜      addLoadEvent/window.onload     *     2   *              ï%,‰                                                                                                                                                                             	                  
-      
-                                                                                                                                                                                                                                                                                                                                                                                                                                                  !                  "                  #                  $                  %                  &                  '                  (      *                             )                        -                 -                 /   	             -                 ³OŒc%   %   %   ”  &     ò    
-     Í  _  W  B  d  O  ¨  :  T  ´      ì  ª  !   V  ¯  š    " [  Ÿ  `  ö  ±  õ  ¾              e  ã                              e               e                                         "  P#  P                              '  -                ;  >                D  F  G  H  J  K  M           e                P                                Y                               a           e  
-   	         e  f  g  h  i  i  l  m                      s  +  t  u                                •                {                ¢  i  £              e  ©              e  ©              ²  N   ³              t  µ  ·  ¹  »              ¿  À  Á  Ã  Å  É              Î  Ï  Ò  Ô  i  Ö  ¥  æ           e           e           e           e               e              e  ©              e  ©              e  ©               ˆ    ÷                ÷                  ÷  ¿   
- i         j    k                                                                           y  z  	              y  z  ]  {  }  ~  i  •    	           y  z    ‚  ƒ  …  }  ]  ˆ  j  Õ    
-      e                y  z    ‚  ]  ~  }  U  k   l  U m  • ¯Â0°      /      7      9      Ó          Iô$KE®úš‡&Õª!«!*   ì   ì   ƒ                         Ğ$   ±%   À%   Õ±&   À&   Õ´'    ´(   t Õ´)   ´*   J+   Õ±,   j-   À,   Õ±.   /   À.   Õ±0   À0   Õ±1   2   À1   Õ´3    t  Õ¡E`PL€  ¯`PL€  í`P+P400`P@€ 9%`PK€ `P@€ ¤`PL€ Õ`P@€ `P:0P   ¸   ¸   p                        µ  H   ×H   Úi      p Ã   Õ¶      ™   “   Õ´   “   –   “   ´    t Õ•   “	   ´    t Õ“   ¡@ `P™ P8 `P©0 `P'P>0 `P'PI	P   t   t   ;                         ´   ×H   Ú   p µ  J   Õ´   ×H   Ú   p µ  J   Õ¡@ `P‘ 	P< `P‘ 	P<P   „   „   F                         µ  H   ´   –2   “   µ     J   Õµ     J   Õ±   À   Õ“   ¡@ `P˜0 `P> `P> `P‘@P   „   „   F                         µ  H      –2   “   µ  ´   J   Õµ     J   Õ±   À   Õ“   ¡@ `P˜0 `P> `P> `P‘@P   P  @                  3      ±   À   Õ”   ´   ´   H   H   –b  “   ´   H   ´   IÃ   Õ¶   H      –  “   ¶   ×H   Ú   p IÃ  Õ¶  ×H   Ú	   p IÃ  Õ¶  –Ö   “   ¶  ×H
-   Ú¶  t Õ¶  ×H   Ú   p IÃ  Õ¶  ×H
-   Ú¶  t Õ¶  ×H   Ú   p IÃ  Õ´   ×H   Ú   p Ã  Õ¶  ×H   Ú´   ×H   Úµ  p t Õ¶     J   Õ¶  ×H   Ú¶  ¶  H   It Õ¶  J   Õ“.   ±   ´   .'À   Õ•ˆşÿÿ“3   ¡@ 	`P,fPŸ0 `P•0 `P™@ `P P: `P P: `PN
- `P/P4 `P P: `P/PD `P P: `P‘ 	P8 `Pš P#ÿÿÿëP4 `P? `Pš P4 `P@ +`Pœ@P   P            }  œ   œ   [                         ´   H   Ä   Õ´   H      –   “   ´   ·   J   Õ•   “	   ´   j   J   Õ“   ¡@ `P0 `P›0 `Pš00 `P•@P   H   H                             ·    t  Õ·    t  Õ¡0 `P: `P: P    X  X  ¶                :        ´   H   ×H   Úp  Ã   Õ–9   “   ´   H   ×H   Úi   p IÃ  Õ¶  
-      @“   ´   H      ˜M   “   Õ´   H	   £1˜2   “   Õ´
-      ˜   “   Õ´
-   H   “   “   –   “   “   ´   H
-   ˜L   “   Õ´   H
-   H   ˜2   “"   Õ´    ´   H
-   ×H   Úp  p 
-      #@“)   –   “*   “*   ¶   ×H   Ú   p ÿ–"   “.   ¶   ×H   Úi   p I“2   ¶   ×H   Ú   p ÿ–$   “6   ¶   ×H   Úi   p I
-“:   ¡0 `P‘ PH `P;0 `P– P: `PNF 	`P¶ D ¶0 `PAF 	`PÆ AP#ÿÿÿçPœ0 `PAF 	`P P0 `P PGF 	`P P0 `P PIF `PAQ <  ,  Ã                        ´    p  –   “    “   ´   ×H   Ú   p Ã   Õ±   À   Õ”	   ´   ¶   H   –g   “   ¶   ´   IÃ  Õ±   ¶  H   ×H   Ú	   
-   p À   Õ¶  ´   J   Õ±   ´   .'À   Õ•‰ÿÿÿ“   ¡@ `P•@ `PAF `P‘ 	P8 	`P,fP™0 `P? `PŸ P9 `PO &`Pœ@P    <         A   |   h  (  r                +       $¦´   Õ•   “     ¨ª«  Õ«  Õ  È¡È“   ´    p  –   “    “   ´   ×H   Ú   p Ã   Õ±   À   Õ”
-   ´   ¶   H   –í   “   ¶   ´   IÃ  Õ´   ×H	   Ú
-   p Ã  Õ¶  ´   J   Õ´   ×H   Ú´   p Ã  Õ¶  ×H   Ú¶  t Õ´   ×H	   Ú   p Ã  Õ¶  ×H   Ú¶  t Õ¶  H   H   Ã  Õ¶  H   H   Ã  Õ¶  ×H   Ú¶  ¶  t Õ±   ´   .'À   Õ•ÿÿÿ“+   ¡@!	`P“0 K `PAI	 `P•@ `PAF `P‘ 	P8 	`P,fP™0 `PO `P‘ 	P8 `P? `P‘ 	P8 `P/P4 `P‘ 	P8 `P/	PD `P“0 `P“0 `P“ PD  `Pœ@P  h  H           ÿÿÿÿ    "                               j     ¤   ¤   ]                 
-        ´    p  –   “    “   ´   ×H   Ú   p Ã   Õ¶   –   “   ¶   H      J   Õ“
-   ¡@ `P• `PAF `P‘ 	P8 `P> `P™@P     ·                         ±   À   Õ”   ´   ´   H   –   “   ±   ´   ´   IÀ   Õ´   H   H      –$   “   ´   H      J   Õ•   “   ´   H      J   Õ“   ±   ´   .'À   Õ•`ÿÿÿ“   ¡@ 	`P,fPš0 `P–0 `PŸ0 `PŸ00 `Pš@ %`Pœ@
-P              ¥   0     À                        ±   ´       ´   p À   Õ´   H   –   “	   ´       ´   p Ã   Õ±   À   Õ”   ´   ¶   H   –K   “   ±   ¶   ´   IÀ   Õ´   H	   
-   J   Õ±   ´   .'À   Õ•¥ÿÿÿ“   ¡@ `P– P9 `P–0 `P‘ P8 `P,fP™0 `P•0 `P•@ (`Pœ@
-P  0         Z   `   È   È   u                          ´   H   H   –.   “   ´   H   H   H   H   ×H   Út  Õ“   ´    t  Õ´    t  Õ´	    t  Õ´
-    t  Õ´    t  Õ¡@ `P™0 `P  -PI `P: `PJ `PJ `PJ `P:P   ˆ   h   *                       $¦´    p  •   “     ¨ª«   Õ«   ÕÈ“   ¡@!	`P&PCN ‘0P   ˆ   x            ÿÿÿÿ                 ğ  ê      	          T      ´   ×H   Úµ     %p Ã   Õ¶   H   IH   H   Ã  Õ´   }Ù  ~  Ã  Õ´   }Ù  ~  Ã  Õ´   H   µ  	   %IÃ  ÕÃ  Õ”   ¶  ¶  –Å   “   ¶  ¶  LÕ¶  µ  
-   %¶  %I–ˆ   “   ¶  ¶  LÕ¶  ¶  ¶  µ  
-   %¶  %IH   LÕ¶  ¶  I   –   “    ¶  ¶  LÕ“!   ¶  ¶  I   –   “$   ¶  ¶     LÕ“%   ¶  .'Ã  Õ•1ÿÿÿ“'   Ã  Õ”'   ¶  ¶   H   H   –r  “+   Ã  Õ±   À   Õ”-   ´   ¶  –Ø   “0   ¶  ´   I—   “3   •   “3   ¶   H   ¶  IH   ´   IÃ  Õ¶  ´   I   –8   “<   ¶  H      –   “?   Ã  Õ•Y   “?   •3   “?   ¶  ´   I¶  H   –   “D   Ã  Õ•!   “D   ±   ´   .'À   Õ•ÿÿÿ“I   ¶  –-   “J   ¶   H   ¶  IH      J   Õ•(   “N   ¶   H   ¶  IH      J   Õ“R   ¶  .'Ã  Õ•zşÿÿ“T   ¡00 `P• 	P8000 `Pš0 `P’0 `P’0 `P™@ 	`P&fP“0 `P; `P0 `P; `P¢0 `P™0 `P0 `P™0 `P”@ `P•@ 	`P&fP0 `P6 `P,	fP”0 `P”0 `PJ `P@ `Pš0 `P™0 `P6 `P”@$ `P0 `P6 `PJ "`Pœ@) `P> `P¨@, `P£@ '`P•@.P             z   Ô            è          Y  ‹  ¼  œ                         Ã  Õ”    ¶  ´   H   H   –ù   “   ´   H   ¶  IÃ   ÕÃ  Õ”   ¶  ¶   H   H   –§   “   ¶   H   ¶  IÃ  Õ¶  H   Ã  Õ¶  –c   “   ¶  ×H   Ú   p ˜!   “   Õ¶  ×H   Úùp 	   “   –   “   ¶  H
-      J   Õ“   ¶  .'Ã  Õ•Eÿÿÿ“   ¶  .'Ã  Õ•òşÿÿ“   ¡000@ 	 `P&fP0 `P”0  `P&fP0 `P“0 `P> `P> `P P P˜0 `P™@ 8`P•@ 5`P•@P ¼         D   À               Ô   Ô   …                         ´   H   –   “   ±   j   À   Õ•H   “   ´   H   –   “   ±   j   À   Õ•   “
-   ±   j   À   Õ“   ´    µ  µ µ p ¡0 `P”0 `Pš@ `P”0 `Pš@+0 `P•@H `P/P3Q  °     "                      µ ™   “   Õ´   “   Â Õµ ×H   Úµ  p Ã   Õµ –0   “   ´   }   µ %   %   Ù  ~ •   “	   “	   Ã  Õe    Ã  ÕÃ  Õ¶   H   Ã  Õ”   ¶  ¶  –v   “   ¶   ¶  IÃ  Õ¶  ™"   “   Õ¶  ×H   Ú¶  H   p “   –   “   ¶  ×H	   Ú¶  t Õ“   ¶  %Ã  Õ•€ÿÿÿ“   ¶  ¡0 `Pœ0 `P-P8 `P« P˜0 !`PJ  `P&`P.fP“0 `P> `P¤ P’0 `P/PI 3`P@ `P4 Q  °         ’   …   ¤  d  ¼      
-          "      $µ ™   “   Õ   “   Â Õµ ™   “   Õ´   “   Â Õµ  ×H   Ú   p Ã   Õ   Ã  Õ   Ã  Õ´   H   H   ¶  –   “
-   ¶  •   “
-   “
-   Ã  Õe    Ã  ÕÃ  Õ¶   H	   Ã  Õ”   ¶  ¶  –9   “   ¶  
-   ¶   ¶  I%   %%Ã  Õ¶  %Ã  Õ•½ÿÿÿ“   ¦´   ×H   Ú   µ %¶  %µ ¶  p Ã  Õ•A   “     ¨ª«	  Õ«	  Õ´   ×H   Ú   µ %¶  %µ p Ã  ÕÈ“   ”   ¶  ×H   Úp  Ã  –"   “    ¶  ×H   Ú¶  t Õ•Ëÿÿÿ“"   ¶  ¡0 `Pœ0 `Pœ0 `P/
-P8 !`P: !`P: %`P·0 !`PJ
-  `P&`P.fP“0 `P™F
- 2`P@1 `P£ P•@ ; `P  PN fP+P‘0 `P/PN `P4 Q ¤  t     >  4   ÿÿÿÿ       ¸   H             0          w  :   8    *                *      µ ™   “   Õ   “   Â Õµ ™   “   Õ´   “   Â Õµ  ×H   Ú   p Ã   Õe    Ã  Õµ    ˜   “   Õµ H   “	   –   “
-   µ H   •   “   µ ×H   Úµ p “   Ã  Õe    Ã  ÕÃ  Õ¶   H   Ã  Õ”   ¶  ¶  –K   “   ¶  ×H   Ú´	   }
-   ¶   ¶  I%   %Ù  ~ t Õ¶  %Ã  Õ•«ÿÿÿ“   Ã  Õ¶  H   Ã	  Õ”   ¶  ¶	  –Ï   “   ¶  ¶  IÃ  ÕÃ  ÕÃ
-  Õ¶  H   Ã  Õ”   ¶
-  ¶  –S   “    ¶  ¶
-  I×H   Ú¶  H   p Ã  Õ¶  —   “%   •   “%   ¶
-  %Ã
-  Õ•£ÿÿÿ“&   ¶  –   “'   ¶  ×H   Ú¶  t Õ“)   ¶  %Ã  Õ•'ÿÿÿ“*   ¶  ¡0 `Pœ0 `Pœ0 `P/
-P8 !`P: `PÊ 'PM !`PJ	  `P&`P.fP“0 `Pª P#ÿÿÿûPD	 2`P@  `P&`P.fP“0 `P> `P6  `P&`P.fP“0 `P™ P8 `P> `PJ =`P@ `P> `P/PI 3`P@ `P4 Q   8         Î   Z          ‚  b          A  Ş   H   H                             ´      ´   %   %J   Õ¡0 `Pœ0P  ¨   ¨   c                         ´   }Ù  ~  Ã   Õ¶   ×H   Ú¶   ×H   Úp  &t Õ´      ¶   ×H   Úp  %   %´   %	   %J
-   Õ¡0 `P’0 `P– "P%ÿÿÿêP4 `P• =Pœ0P   ”   ”   O                         ´   H   ×H   Ú   p Ã   Õ¶   –    “   ´    ¶   Ip •   “   “   ¡0 `P– P8 	`P> `P-	PCK0 `PAV  Ô  Ä  <                %       ±   ´   ×H   Ú   p IH   À   Õ´   ×H   Ú   p Ã   ÕÃ  Õ”
-   ¶  ¶   H   –£   “   ¶   ¶  IH	   ™   “   Õ¶   ¶  IH
-   “   Ã  Õ¶  ×H   Ú   p –   “   ´    t  Õ“   ¶  ×H   Ú   p –   “   ´    t  Õ“   ¶  .'Ã  Õ•Nÿÿÿ“   ´    p  –   “!   ±   À   Õ•   “#   ±   À   Õ“%   ¡@ `P– P0 `P‘ 	P8 	 `P&fP˜0 `P±0 `P P= `PO	 `P P= `PO &`P•@ `P“0 `P–00 `P‘@P  Ô         E   ·   p   p   ;                        ´    µ  p Ã   Õ¶      ¶   H   %   %¶   H   %J   Õ¡0 `P)P8 `P©0P    \   \   &                        ´    µ  p Ã   Õ¶   ×H   Ú   t Õ¡0 `P)P8 `P P4P  œ   Œ   J                       µ     %Ã   Õ”   ¶   H   µ –   “      ¶   %Ã   Õ•Ôÿÿÿ“   ¶   ¡0 `P> fP—0 `P™@ `P4Q    œ             1       ›                        ´    µ  ×H   Úp  p Ã   Õ´    µ  ×H   Úp  p Ã  Õ´    µ  ×H   Úp  p Ã  Õ´    µ  ×H   Úp  p Ã  Õ¶      %¶  %   %¶  %   %¶  %¡0 `P P%ÿÿÿıP8 `P P%ÿÿÿıP8 `P P%ÿÿÿıP8 `P P%ÿÿÿıP8 `P¥0Q    ¨  ¨            	       !       ´   }Ù  ~  Ã   Õ   ´    µ  p %Ã  Õ   ´    ¶   p %Ã  Õ´   ×H   Ú   p Ã  Õ¶  ¶  ¶  %J   Õ¶  H	   
-   J   Õ´   ×H   Ú   p –(   “   ´   ×H   Ú   p Ã  Õ•#   “   ´   ×H   Ú   p Ã  Õ“   ¶  ×H   Ú¶  ¶  H   t Õ´   –   “   ´    ´   t Õ“!   ¡@ `P’0 `P.;P9 `P/P9 `P‘ 	P8 `P“0 `P”00 `P‘ 	P= `P‘ P’00 `P‘ PM `P˜ PD `P? `P+PIP  H  ¸  ƒ                Q      $´   ×H   Ú   p Ã   Õ´    t Õ¶   –T  “   ¶   H   ™   “   Õ¶   H   “	   Ã  Õ¶  ×H   Úi   p Ã  Õ	   Ã  ÕÃ  Õ”   ¶  ¶  H
-   ˜   “   Õ¶  µ  “   –-   “   ¶  ¶  ¶  I%Ã  Õ¶  .'Ã  Õ•¬ÿÿÿ“   ¶   ×H   Út  Õ¶   H   –ö  “   ¶   ×H   Ú¶  H
-   ¶  H
-   t Õ´   ×H   Ú   p Ã  Õ¶   H   ×H   Ú¶  t Õ´   ×H   Ú¶   	   p Ã  Õ¶  H   ¶  H   J   Õ¶  H   ¶  H   J   Õ¶  H   ¶  H   J   Õ¶  H   J   Õ¶  H   ¶  H   J   Õ¦¶  H      J   Õ•   “5     ¨ª«  Õ«  ÕÈ“5   ¦¶  H      J   Õ•   “7     ¨ª«  Õ«  ÕÈ“7   ¦¶  H      J   Õ•   “9     ¨ª«  Õ«  ÕÈ“9   ¦¶  H       J   Õ•   “;     ¨ª«  Õ«  ÕÈ“;   ¶  ¶  J   Õ¶   ¶  H"   d&J#   Õ¶  H   ×H$   Ú¶  t Õ•”   “B   ¶   H%   –   “D   ¶   ×H%   Úp  Ã  Õ¶  ×H&   Út Õ¶  ×H'   Ú(   ¶  H
-   t Õ¶  ×H)   Ú(   ¶  H
-   t Õ¶  ×H*   Út  Õ¶   J+   Õ“Q   ¡0 `P‘ 	P8 `P(P4 `PN `P§0 `P P8 `P:  `P&fP°0 `PF >`P•@ `P+P4 `P“@ `P PD `P‘ 	P8 `P” P4 `P• P8 `P˜0 `P˜0 `P˜0 `P0 `P˜@!`P¡ 9‘0!`P¡ 7‘0!`P¡ 5‘0!`P¡ 4‘0 `P> `P–0 `P” P> `P“@& `P+P8 `P,P4 `P™ P4 `P™ P4 `P+P4 `P@.P  H  ø          ÿÿÿÿ   6     ÿÿÿÿ   i     ÿÿÿÿ!   œ     ÿÿÿÿ       ‚   Y           â                          H             {     h   h   0                         µ  H   –   “   µ  ×H   Út  Õ“   µ  J   Õ¡0 `P’0 `P*PI `P:P Ğ   Ğ   ‚                        µ  ™   “   Õ´   H   “   Â  Õµ  H   ™   “   Õµ  H   “   Ã   Õ¶   H   –   “	   ¶   H   Ã   Õ“
-   ´    µ  t Õ¶   ¡@ `P¡0 `P¥0 `P–@ `P“@ `P)P4 `P4Q   h   h   3                        ´    µ  p Ã   Õ´   H      ¶   H   &%J   Õ¡0 `P)PH `P¡0P   \   \   '                        ´    µ  p Ã   Õ´    ¶   H   &t Õ¡0 `P)P8 `P‘ P4P     o                 $       µ  H   –   “    •U  “   µ  µ J   Õ´   H   –£   “   µ –(   “   µ  ×H   Ú   ´   t Õ•#   “
-   µ  ×H   Ú   ´   t Õ“   ´   –<   “   µ  ×H   Ú   ´	   t Õµ  ×H   Ú
-   ´   t Õ“   •—   “   µ –'   “   µ  ×H   Ú   ´   t Õ•"   “   µ  ×H   Ú   ´   t Õ“   ´   –<   “   µ  ×H   Ú   ´	   t Õµ  ×H   Ú   ´   t Õ“$   ¡0 `P’@ `PAK0 `P< `P”0 `P= `P• P>0 `P• PI `P? `P• P4 `P• P“@@ `P= `P” P>0 `P” PI `P? `P• P4 `P• PIP  L  <  ›                &      Ã   ÕÃ  Õ”    µ  H   µ ˜   “   Õµ  H   µ “   –Y  “   ¶   %Ã   Õ¶   '–   “    “   ¶  ˜   “   Õµ  H   “   –   “   µ  H   Â  Õ•   “   Ã  Õµ  H   –   “   µ  H   Â  Õ•S   “   µ  H   H   –    “   µ  H   H   Â  Õ•!   “   Ã  Õµ  H   H   Â  Õ“   ¶  ˜C   “   Õµ  H   ˜0   “   Õµ  H   µ ˜   “    Õµ  H   µ “#   –   “$   ´    µ  µ µ t Õ“&   •|şÿÿ“&   ¡@ `P6 `P6 fP˜ œ@ `P6 `P’0 `PA0F `P¦0 `P–00 `P6 `P’0 `P–00 `P—0 `P›00 `P6 `P–@, `P¢ ˜ œ0 `P/P“@0P   L            ‰  ä  ”                  •      ´   }Ù  ~  Ã   Õ´   ×H   Ú   p Ã  Õe    Ã  ÕÃ  Õ”   ¶  ¶  H   –€   “	   ¶  ¶  IH   ˜,   “   Õ¶  ¶  IH   ×H   Úp    “   –"   “   ¶  ×H	   Ú¶  ¶  It Õ“   ¶  .'Ã  Õ•qÿÿÿ“   ´   ×H
-   Ú   p Ã  Õ´   ×H
-   Ú   p Ã  Õ¶  –"   “   ¶  ×H	   Ú¶  t Õ•(   “    ´   –   “"   ´       t Õ“$   ÿÃ  ÕÃ  Õ”$   ¶  ¶  H   &–Ö  “(   ¶  ¶  IÃ  Õ¶  ¶  –   “+   ¶  H   ×H   Ú   p Ã  Õ¶  IÃ	  Õ¶  H   –¸  “2   ¶  &Ã
-  Õ”3   ¶  H   –<   “6   ¶
-  .'Ã
-  Õ¶  ¶
-  IH   ×H   Ú   p Ã  Õ•·ÿÿÿ“<   ¶
-  ¶  &Ã  Õ¶  I¶  &&Ã  ÕÃ  Õ”@   ¶  ¶  –  “B   ¶  ¶  ¶  %I˜;   “E   Õ¶  ¶  ¶  %%I˜    “I   Õ¶  ¶  ¶  %%IH   “M   –Q   “N   ´    ¶  ¶  ¶  %I¶  ¶  %µ  ¶  ¶  ¶  %%IH   ¶  H   t Õ•M   “X   ´   –>   “Z   ´       ¶  %   %¶  %   %¶  ¶  IH   %t Õ“c   ¶  .'Ã  Õ•ğşÿÿ“e   ¶
-  &Ã  Õ•¯   “f   ¶  ¶  %I˜   “i   Õ¶  ¶  %IH   “l   –=   “m   ´    ¶  ¶	  µ  ¶  ¶  %IH   ¶  H   t Õ•B   “s   ´   –3   “u   ´       ¶  %   %¶  ¶  IH   %t Õ“|   ¶  .'Ã  Õ•ıÿÿ“~   ´   ˜   “€   Õ´   ×H
-   Ú   p “ƒ   –•   “„   Ã  Õ”„   ¶  ¶  H   &–\   “ˆ   ¶  ¶  I   ¶  ¶  IH   %   %J   Õ¶  ¶  IH      J   Õ¶  .'Ã  Õ•“ÿÿÿ““   ´    ¶   t Õ“•   ¡0 `P’@ `P‘ 	P8 `P: 	 `P&fP˜0 `P± !P˜0 `P” PI )`P•@
- `P‘ 	P8 `P‘ 	PH `P> `P/P>0 `P? `P+PI `PG 	`P&fPš0 `PN `P“@ `P• P8 `P; `P–@  `P; fP–0 `P; `Pš P’@& %`P> $`P’0  `P&fP“0 `PØ0 `P¾ P>0 `P? `P° PI( 4`P•@2 `P•0@5 `Pµ0 `Pª P>0 `P? `P¥ PI $`P•@? `P¡ P’0 `P&fPš0 `P©0 `P™@@ (`P•@D `P*PIFP   ä         ;   ”          ë  N          d           a  ì         ‹  r   h  h  à                         ´   ×H   Ú   p H   —   “    “   ´    t  Õ´   ×H   Ú   p H   —   “   ´    t Õ “   ´   H   H	   ×H
-   Úi   p Ã   Õ¶   –   “   ´    ¶   It Õ “   ´   ×H   Ú   p –   “   ´    t Õ“   ¡@ `P‘ 
-P’0 `PAF `PJ `P‘ 
-P’0 `P'P4 `PAF `P› P8 `P> `P,P4 `PAF `P‘ 	PM `P'PIP Ø   ¨   X                 	       $¦´   H   ×H   Ú   t Õ•-   “     ¨ª«   Õ«   Õ´    ´   t Õ  È¡È“   ´    t  Õ¡0A `P– P‘0 ; `P,
-P4 `PA	I `P:P Ø   È      (       ÿÿÿÿ    F                        è   è   ›                          ´   H   –*   “   ´   ×H   Ú   ´   t Õ•f   “   ´   H   H   ˜   “   Õ´   ´   H   “   –   “   ´	    t  Õ•   “   ´
-    ´   t Õ“   ¡0 `P”@ `P— 	P>0 `P¹@ `P”00 `P+PIP  3õØ  `ã  V     Pt          `        	    `ã    t          `ã  t              `i                    é               ã           `  `$  %      p  `(  )  *  .  U    P0  1  2  3     4  $  5  W  +  6    P8    P	  `&    <  =  i    ?  V  @  A  
-  `C    `&    <  E  i      a  ?    I    R L  N      `&      P  ¥  R  Q    `i  S    • ¥  Q  U  t     `S  W  X      Z  i  • ¥  t   Q    `    \  ]  +  ^  :  B  O  V  _    `b    `  `    f  j  k    
-      l  ã  n  o  t   p  q  r  ¥  Q  U    `      ]  +  +  v  w  x  ¥  U  Q    `  ’    “  ‘    `  –  —    ˜  ³  ™    “  ‘    `  ‘  U  $ Í    `    <     ¡    Á
-   ¤  ¥  U  ¦    §  ”  š      `ª  «  ¬  ­  ®      `ª  °      `t     0    `±  ¶  ¸  º  ¼  :    `  Â  ´  Ä      P  Æ  ¥  È  Ç    Ê  ¡    Ë  ½  Ì    `    Ğ  Ñ  ¤  ¥  U    Pt     ^  Õ    ×  L    $  Ø  ¥  Ù  Ú  Û  Ü  İ  ß  Ş    `à    `á     `â  !  `ä  ã    å  ç  è  é  ê    ë  "  `í  î  #  `$  ï  ª  ğ  ñ  L  ì  $  `ª    ó  ô  ®  W  %  `ª  Í  ®  &  `®  $  ø  ù  õ  ò    ú  ¨  û  ¯  ü  ı  ş  ÿ  '  ` Ë  N  L  ¬  ö  (  `      	          ¡     Ì   Z  -           Æ  ¥  È  Ç  ¾  )  `  <       Ÿ    ó  W  U    PÍ    Ê  *  `  †    +  `!   ,  `  ø  #  †   $    !  .  `  W    |  i    «  {    /  `*    Z     t   „  †  ‡    ‰  Š  €  ‹  0  `Œ    1  `*    Z     D              «    -  `  W    p€    p  p   `  p  p  p  p  p  p  p	  p
-  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p   p!  p"  p#  p$  p%  p&  p'  p(  p)  p   S  !  [  $  `  c  W    p  /    ½  t   " ÿX„Ò  4                                                   
-                                       1      !         0      %       6      &         K      :         V      B         i      O         q   	   T         z      V         †      [         ’      `         •      d         ª      _         Ë     W       
- ¢  
-   W       
- ¬     W       
- ½     W       
- ·               ½      ”         È      š         Î      Ÿ         à      ¨         ç      ¯         ë      ±         ï      ´         ö      ¾         	  ,   Í         5     ì         8     ª         @     ò         G     õ         K     ö         [              b                            	           —     "        H©À      ;m      ;m                   ’   »  }   »                 ×  x  ½  x                   ;  z  ;                 P    =    "                         +             €S  `	  >  `	  E               	  X	  	  X	  K                 ä	  S  É	  S  S                p  d  V  d  t                „    g    „                1  2    2  ¤                ¿  Ü  ¨  Ü  ²                ú    Ş    ¾                ­           Ë                9    #    å               ¥  "  ‹  "  ó               ©"  |$  "  |$  #              d%  ì0  [%  ì0  :  &            Ğ%  ü'  Ç%  ü'  <  *            P(  b,  G(  b,  L  *            Ÿ,  «0  –,  «0  f  *            3  d3  û2  d3  ‘               …3  m4  e3  m4  ”                ‹4  V5  n4  V5  ™               ¹6  +9  Ÿ6  +9  §               —9  ı9  ƒ9  ı9  ¼              :  V:  ş9  V:  À              «:  3;  •:  3;  Å              r;  ¡<  ^;  ¡<  Í              =  @  ø<  @  ×              “@  ŒI  |@  ŒI  î              ºI  J  ¥I  J                WJ  YK  GJ  YK  '              §K  WL  ’K  WL  4              ’L  ÛL  yL  ÛL  ;              iM  cQ  UM  cQ  B              ÂQ  NY  ±Q  NY  b              ¸Y  äe  ¤Y  äe  •              ¡f  bi  †f  bi  ß               §i  pj  ‘i  pj  ÷               Õj  m  Åj  m               5¡İ	ÅL¾îé½&       eÜ=0eÜ=1FœzFeåg¬   [    O^partitionKey=%28http%2Cros.org%29,:http://wiki.ros.org/moin_static197/common/js/common.js necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
-Date: Mon, 26 Feb 2024 06:18:20 GMT
-Server: Apache
-Last-Modified: Thu, 30 Nov 2023 20:43:36 GMT
-ETag: "6d3b-60b64b4b88faa"
-Accept-Ranges: bytes
-Content-Length: 27963
-Content-Type: application/javascript
- original-response-headers Date: Mon, 26 Feb 2024 06:18:20 GMT
-Server: Apache
-Last-Modified: Thu, 30 Nov 2023 20:43:36 GMT
-ETag: "6d3b-60b64b4b88faa"
-Accept-Ranges: bytes
-Content-Length: 27963
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/javascript
- ctid 2 uncompressed-len 0 net-response-time-onstart 438 net-response-time-onstop 655 alt-data 1;27963,javascript/moz-script-bytecode-20230309232128-8l alt-data-from-child 1  RÊ
