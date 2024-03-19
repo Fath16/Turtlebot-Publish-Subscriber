@@ -1,2 +1,0 @@
-smb_gazebo:turtlebot3_simulations/turtlebot3_gazebo:turtlebot3_simulations/turtlebot3_simulations
--DCATKIN_DEVEL_PREFIX=/home/theanvin/catkin_ws1/devel -DCMAKE_INSTALL_PREFIX=/home/theanvin/catkin_ws1/install -G Unix Makefiles
