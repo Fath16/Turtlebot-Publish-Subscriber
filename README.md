@@ -22,7 +22,9 @@ To provide an understanding of how to create robot which control by keyboard by 
       roslaunch smb_gazebo smb1.launch
 
 - Check the simulation
-  
+- Link of running simulation on youtube
+
+      https://youtu.be/YktJKEEcgQw
 
   
 
