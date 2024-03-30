@@ -19,7 +19,6 @@ To provide an understanding of how to create robot which control by keyboard by 
 - Open new ternibal to run the simulation
 
       source devel/setup.bash
-
       roslaunch smb_gazebo smb1.launch
 
 - Check the simulation
