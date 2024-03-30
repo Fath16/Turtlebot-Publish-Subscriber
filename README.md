@@ -66,7 +66,10 @@ Open another terminal and run
 - run the python file
 
       python3 file_name.py
-    
+
+- link to running simulation in youtube
+
+      https://youtu.be/QP5R7n7ZSSA
   
 
 
