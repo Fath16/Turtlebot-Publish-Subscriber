@@ -26,9 +26,6 @@ Gazebo:
 
     roslaunch rrbot_gazebo rrbot_world.launch
 
-ROS Control:
-
-    roslaunch rrbot_control rrbot_control.launch
 
 - Link to youtube
 
