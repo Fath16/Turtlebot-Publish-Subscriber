@@ -29,7 +29,7 @@ Gazebo:
 
 - Link to youtube
 
-      https://youtu.be/YktJKEEcgQw
+   
 
 
 
