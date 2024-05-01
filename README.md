@@ -20,6 +20,6 @@ To provide an understanding of how to create Robot by using URDF & RViz link_des
 
       cd ~/catkin_ws
       source devel/setup.bash
-      roslaunch twolink_description rviz.launch
+      roslaunch two_link_description rviz.launch
 
 - Check the simulation
